@@ -22,14 +22,29 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
     {
-        if(_spawnedCharacters.TryGetValue(player, out NetworkObject networkObject))
+        if (_spawnedCharacters.TryGetValue(player, out NetworkObject networkObject))
         {
             runner.Despawn(networkObject);
             _spawnedCharacters.Remove(player);
         }
     }
 
-    public void OnInput(NetworkRunner runner, NetworkInput input) { }
+    public void OnInput(NetworkRunner runner, NetworkInput input)
+    {
+        var data = new NetworkInputData();
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            data.direction += Vector3.right;
+        }
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            data.direction += Vector3.left;
+        }
+
+        input.Set(data);
+    }
     public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input) { }
     public void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason) { }
     public void OnConnectedToServer(NetworkRunner runner) { }
@@ -86,4 +101,4 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
             }
         }
     }
-}
+}   
