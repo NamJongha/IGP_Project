@@ -15,7 +15,7 @@ D:/Unity/IGP_Project/IGP_Project
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-59341
+62427
 Successfully changed project path to: D:/Unity/IGP_Project/IGP_Project
 D:/Unity/IGP_Project/IGP_Project
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,14 +49,14 @@ D:/Unity/IGP_Project/IGP_Project
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [12424]  Target information:
+Player connection [17116]  Target information:
 
-Player connection [12424]  * "[IP] 192.168.75.22 [Port] 0 [Flags] 2 [Guid] 2584491747 [EditorId] 2584491747 [Version] 1048832 [Id] WindowsEditor(7,MSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [17116]  * "[IP] 192.168.75.22 [Port] 0 [Flags] 2 [Guid] 2493028175 [EditorId] 2493028175 [Version] 1048832 [Id] WindowsEditor(7,MSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [12424] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [12424] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [17116] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [17116] Host joined alternative multi-casting on [225.0.0.222:34997]...
 [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-Refreshing native plugins compatible for Editor in 46.20 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 28.37 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.50f1 (c3db7f8bf9b1)
 [Subsystems] Discovering subsystems at path D:/Unity/2022.3.50f1/Editor/Data/Resources/UnitySubsystems
@@ -72,44 +72,44 @@ Initialize mono
 Mono path[0] = 'D:/Unity/2022.3.50f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/2022.3.50f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Unity/2022.3.50f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56964
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56356
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/2022.3.50f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004995 seconds.
-- Loaded All Assemblies, in  0.524 seconds
+Registered in 0.004005 seconds.
+- Loaded All Assemblies, in  0.532 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.327 seconds
-Domain Reload Profiling: 852ms
-	BeginReloadAssembly (218ms)
+- Finished resetting the current domain, in  0.504 seconds
+Domain Reload Profiling: 1036ms
+	BeginReloadAssembly (182ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (4ms)
-	RebuildCommonClasses (51ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (66ms)
-	LoadAllAssembliesAndSetupDomain (176ms)
-		LoadAssemblies (212ms)
+		CreateAndSetChildDomain (2ms)
+	RebuildCommonClasses (53ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (67ms)
+	LoadAllAssembliesAndSetupDomain (215ms)
+		LoadAssemblies (180ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (172ms)
-			TypeCache.Refresh (171ms)
-				TypeCache.ScanAssembly (154ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (1ms)
-	FinalizeReload (328ms)
+		AnalyzeDomain (213ms)
+			TypeCache.Refresh (210ms)
+				TypeCache.ScanAssembly (188ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (505ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (272ms)
+		SetupLoadedEditorAssemblies (425ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
-			SetLoadedEditorAssemblies (12ms)
+			InitializePlatformSupportModulesInManaged (14ms)
+			SetLoadedEditorAssemblies (16ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (3ms)
-			ProcessInitializeOnLoadAttributes (192ms)
-			ProcessInitializeOnLoadMethodAttributes (56ms)
+			BeforeProcessingInitializeOnLoad (4ms)
+			ProcessInitializeOnLoadAttributes (304ms)
+			ProcessInitializeOnLoadMethodAttributes (87ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -118,54 +118,54 @@ Domain Reload Profiling: 852ms
 Worker process is ready to serve import requests
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.352 seconds
+- Loaded All Assemblies, in  1.554 seconds
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.041 seconds
-Domain Reload Profiling: 2395ms
-	BeginReloadAssembly (220ms)
+- Finished resetting the current domain, in  1.387 seconds
+Domain Reload Profiling: 2943ms
+	BeginReloadAssembly (254ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (7ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (27ms)
-	RebuildCommonClasses (45ms)
-	RebuildNativeTypeToScriptingClass (18ms)
-	initialDomainReloadingComplete (45ms)
-	LoadAllAssembliesAndSetupDomain (1025ms)
-		LoadAssemblies (758ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (22ms)
+	initialDomainReloadingComplete (76ms)
+	LoadAllAssembliesAndSetupDomain (1164ms)
+		LoadAssemblies (925ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (414ms)
-			TypeCache.Refresh (350ms)
-				TypeCache.ScanAssembly (315ms)
-			ScanForSourceGeneratedMonoScriptInfo (46ms)
-			ResolveRequiredComponents (16ms)
-	FinalizeReload (1042ms)
+		AnalyzeDomain (411ms)
+			TypeCache.Refresh (347ms)
+				TypeCache.ScanAssembly (311ms)
+			ScanForSourceGeneratedMonoScriptInfo (44ms)
+			ResolveRequiredComponents (17ms)
+	FinalizeReload (1387ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (765ms)
+		SetupLoadedEditorAssemblies (1083ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (7ms)
-			SetLoadedEditorAssemblies (8ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			SetLoadedEditorAssemblies (12ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (102ms)
-			ProcessInitializeOnLoadAttributes (578ms)
-			ProcessInitializeOnLoadMethodAttributes (66ms)
-			AfterProcessingInitializeOnLoad (3ms)
+			BeforeProcessingInitializeOnLoad (125ms)
+			ProcessInitializeOnLoadAttributes (848ms)
+			ProcessInitializeOnLoadMethodAttributes (85ms)
+			AfterProcessingInitializeOnLoad (2ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (11ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 18.47 ms, found 5 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
+Refreshing native plugins compatible for Editor in 20.15 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5634 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 60 unused Assets / (0.9 MB). Loaded Objects now: 6098.
-Memory consumption went from 215.7 MB to 214.7 MB.
-Total: 6.197300 ms (FindLiveObjects: 0.691700 ms CreateObjectMapping: 0.511700 ms MarkObjects: 4.550300 ms  DeleteObjects: 0.442300 ms)
+Unloading 5655 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 60 unused Assets / (0.9 MB). Loaded Objects now: 6120.
+Memory consumption went from 216.8 MB to 215.9 MB.
+Total: 11.068200 ms (FindLiveObjects: 0.778800 ms CreateObjectMapping: 0.591300 ms MarkObjects: 7.285100 ms  DeleteObjects: 2.411500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -182,115 +182,1260 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1122567.837216 seconds.
-  path: Assets/Photon/Fusion/Editor/FusionEditorConfigImporter.cs
-  artifactKey: Guid(de703c9ba568c804997917200422ce7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/Fusion/Editor/FusionEditorConfigImporter.cs using Guid(de703c9ba568c804997917200422ce7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '263e27ac31df8df01266af2f60e3354d') in 0.003096 seconds
+  Time since last request: 1458937.474112 seconds.
+  path: Assets/Scripts/Network/NetworkPlayerSpawner.cs
+  artifactKey: Guid(04c549a83e7e7a64983500675764e7d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Network/NetworkPlayerSpawner.cs using Guid(04c549a83e7e7a64983500675764e7d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c462a91e6e8befc8272fb1c8baf3bd60') in 0.010960 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000081 seconds.
-  path: Assets/Photon/Fusion/Assemblies/Fusion.Runtime.pdb
-  artifactKey: Guid(fa7f23cdc7db24047a03b32c39872f80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/Fusion/Assemblies/Fusion.Runtime.pdb using Guid(fa7f23cdc7db24047a03b32c39872f80) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '307608faf64e0655f4a06746fb230040') in 0.026398 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000083 seconds.
-  path: Assets/Photon/Fusion/Assemblies/Fusion.Realtime.pdb
-  artifactKey: Guid(2689596b16ccf334487a267aa8c00f5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/Fusion/Assemblies/Fusion.Realtime.pdb using Guid(2689596b16ccf334487a267aa8c00f5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'ae5a12eaeda56d31f5133976eb0799be') in 0.001780 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 24.553604 seconds.
-  path: Assets/Photon/Fusion/Runtime/Statistics/FusionStatistics.cs
-  artifactKey: Guid(9c6080750a33c9d428004642d0e07dd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/Fusion/Runtime/Statistics/FusionStatistics.cs using Guid(9c6080750a33c9d428004642d0e07dd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e0b7c1c0f5b09214434ba8c506b6856e') in 0.001698 seconds
+  Time since last request: 167.129074 seconds.
+  path: Assets/Scripts/Network/NetworkInputData.cs
+  artifactKey: Guid(753c529a0ca493a40a4b0a01f3bca743) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Network/NetworkInputData.cs using Guid(753c529a0ca493a40a4b0a01f3bca743) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6f7ab5177f3e087a06af89f25bccd47c') in 0.025419 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 2.128053 seconds.
-  path: Assets/Photon/Fusion/Assemblies/Fusion.Sockets.dll.debug
-  artifactKey: Guid(02ee5c5911f692e44a0cec1e51da1507) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/Fusion/Assemblies/Fusion.Sockets.dll.debug using Guid(02ee5c5911f692e44a0cec1e51da1507) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '5e296aa15f908a145916eb70cf5f3b09') in 0.000995 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.557883 seconds.
-  path: Assets/Photon/Fusion/Assemblies/Fusion.Runtime.pdb.debug
-  artifactKey: Guid(7135dc2f84a2d814eb8ed3c3e41b0772) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/Fusion/Assemblies/Fusion.Runtime.pdb.debug using Guid(7135dc2f84a2d814eb8ed3c3e41b0772) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '139ab56d0089dfb610183b167e228054') in 0.000759 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.920365 seconds.
-  path: Assets/Photon/Fusion/Runtime/Statistics/FusionStatsWorldAnchor.cs
-  artifactKey: Guid(b922ea457e8e4de6bfea00a8cc1eca80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/Fusion/Runtime/Statistics/FusionStatsWorldAnchor.cs using Guid(b922ea457e8e4de6bfea00a8cc1eca80) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'ca345a6fae981698e79a6dab3968362f') in 0.000584 seconds
+  Time since last request: 47.328651 seconds.
+  path: Assets/Scripts/NetworkInputData_RAZOR.cs
+  artifactKey: Guid(e8f276a5d8984724ca82c79404c251bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/NetworkInputData_RAZOR.cs using Guid(e8f276a5d8984724ca82c79404c251bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4f8814d1da242c3a79a1390f354f00e6') in 0.001498 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 2.146573 seconds.
-  path: Assets/Photon/Fusion/Runtime/Statistics/FusionStatsGraphShader.shader
-  artifactKey: Guid(f723a494700aee146aa96072604b48c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/Fusion/Runtime/Statistics/FusionStatsGraphShader.shader using Guid(f723a494700aee146aa96072604b48c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'a3a1841e9e4a7e10e22d3febdcfad1f9') in 0.001281 seconds
+  Time since last request: 7.538672 seconds.
+  path: Assets/Scripts/NetworkInputData_RAZOR.cs
+  artifactKey: Guid(e8f276a5d8984724ca82c79404c251bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/NetworkInputData_RAZOR.cs using Guid(e8f276a5d8984724ca82c79404c251bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '254294b7ee56a30290767a636c0450db') in 0.001054 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.001576 seconds.
-  path: Assets/Photon/Fusion/Runtime/Statistics/StatsIcons/FusionStatsToggleArrowIcon.png
-  artifactKey: Guid(330babd635d5dfc4691ae3151ffc4491) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/Fusion/Runtime/Statistics/StatsIcons/FusionStatsToggleArrowIcon.png using Guid(330babd635d5dfc4691ae3151ffc4491) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+  Time since last request: 54.878168 seconds.
+  path: Assets/Scripts/Player.cs
+  artifactKey: Guid(c037e99ee58a6484faeca6c107fc69a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player.cs using Guid(c037e99ee58a6484faeca6c107fc69a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '68097d5e12e26519049f25e31cdde6ed') in 0.001293 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 9.46 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 18 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (0.9 MB). Loaded Objects now: 6121.
+Memory consumption went from 108.4 MB to 107.6 MB.
+Total: 80.591800 ms (FindLiveObjects: 2.510800 ms CreateObjectMapping: 0.616100 ms MarkObjects: 76.967900 ms  DeleteObjects: 0.494700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:Fusion.ScriptOrderDependency: 4b8af03305881e9f759ed98475040ae8 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 8.02 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (0.9 MB). Loaded Objects now: 6121.
+Memory consumption went from 108.4 MB to 107.5 MB.
+Total: 7.413900 ms (FindLiveObjects: 0.583400 ms CreateObjectMapping: 0.744800 ms MarkObjects: 5.664400 ms  DeleteObjects: 0.419900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:FusionILWeaverTriggerImporter/ConfigHash: b0b173a93bb19085723cb3d421b3a13b -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:Fusion.ScriptOrderDependency: 4b8af03305881e9f759ed98475040ae8 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 92.254863 seconds.
+  path: Assets/Scripts/Player.cs
+  artifactKey: Guid(c037e99ee58a6484faeca6c107fc69a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player.cs using Guid(c037e99ee58a6484faeca6c107fc69a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '313e3a4c6a74ed4b6c6fc92963dbb11d') in 0.050589 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 11.291797 seconds.
+  path: Assets/Scripts/BasicSpanwer.cs
+  artifactKey: Guid(2695d2fdb31aa9e43b6689b52acd906d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BasicSpanwer.cs using Guid(2695d2fdb31aa9e43b6689b52acd906d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '61583b577beccf7e1f61d6c7bd1280c8') in 0.002570 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  4.794 seconds
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.039 seconds
+Domain Reload Profiling: 5835ms
+	BeginReloadAssembly (2731ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2091ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (1ms)
+		CreateAndSetChildDomain (298ms)
+	RebuildCommonClasses (40ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (44ms)
+	LoadAllAssembliesAndSetupDomain (1969ms)
+		LoadAssemblies (1980ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (159ms)
+			TypeCache.Refresh (54ms)
+				TypeCache.ScanAssembly (2ms)
+			ScanForSourceGeneratedMonoScriptInfo (75ms)
+			ResolveRequiredComponents (29ms)
+	FinalizeReload (1039ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (773ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (15ms)
+			SetLoadedEditorAssemblies (9ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (111ms)
+			ProcessInitializeOnLoadAttributes (581ms)
+			ProcessInitializeOnLoadMethodAttributes (54ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (20ms)
+Refreshing native plugins compatible for Editor in 21.35 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5517 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (0.9 MB). Loaded Objects now: 6127.
+Memory consumption went from 194.6 MB to 193.7 MB.
+Total: 6.530500 ms (FindLiveObjects: 0.687800 ms CreateObjectMapping: 0.653800 ms MarkObjects: 4.712300 ms  DeleteObjects: 0.475000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:FusionILWeaverTriggerImporter/ConfigHash: b0b173a93bb19085723cb3d421b3a13b -> 
+  custom:scripting/monoscript/fileName/NetworkInputData.cs: a93c22735a7c786daea9ac5ebfc6c07e -> 547c7028f4252f6ebdfbb838ba2285fa
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/NetworkInputData_RAZOR.cs: 48f8907c6faaaed85e204889a4a759d6 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:Fusion.ScriptOrderDependency: 4b8af03305881e9f759ed98475040ae8 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: ebd266e47e6c7f81dcb8adbd315a3e98 -> e315aae8384f31ec2415b965b65ad7cd
+========================================================================
+Received Import Request.
+  Time since last request: 40.811365 seconds.
+  path: Assets/Scripts/Network/NetworkInputData.cs
+  artifactKey: Guid(753c529a0ca493a40a4b0a01f3bca743) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Network/NetworkInputData.cs using Guid(753c529a0ca493a40a4b0a01f3bca743) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'daea4ba2571169523de7a90440fb3599') in 0.046248 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.942 seconds
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.205 seconds
+Domain Reload Profiling: 5148ms
+	BeginReloadAssembly (252ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (21ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (58ms)
+	RebuildCommonClasses (47ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (46ms)
+	LoadAllAssembliesAndSetupDomain (1582ms)
+		LoadAssemblies (1401ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (310ms)
+			TypeCache.Refresh (94ms)
+				TypeCache.ScanAssembly (6ms)
+			ScanForSourceGeneratedMonoScriptInfo (148ms)
+			ResolveRequiredComponents (66ms)
+	FinalizeReload (3206ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (926ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (15ms)
+			SetLoadedEditorAssemblies (10ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (139ms)
+			ProcessInitializeOnLoadAttributes (695ms)
+			ProcessInitializeOnLoadMethodAttributes (63ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (21ms)
+Refreshing native plugins compatible for Editor in 14.98 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5517 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (0.9 MB). Loaded Objects now: 6132.
+Memory consumption went from 194.6 MB to 193.7 MB.
+Total: 13.940400 ms (FindLiveObjects: 1.573800 ms CreateObjectMapping: 2.062900 ms MarkObjects: 9.323400 ms  DeleteObjects: 0.977300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:FusionILWeaverTriggerImporter/ConfigHash: b0b173a93bb19085723cb3d421b3a13b -> 
+  custom:scripting/monoscript/fileName/NetworkInputData.cs: d9598b8ba5c083eeb7b57e7d40846274 -> 547c7028f4252f6ebdfbb838ba2285fa
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/NetworkInputData_RAZOR.cs: 48f8907c6faaaed85e204889a4a759d6 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:Fusion.ScriptOrderDependency: 4b8af03305881e9f759ed98475040ae8 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 75d3b8e601a159eb8169f6a51bc2d187 -> e315aae8384f31ec2415b965b65ad7cd
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.905 seconds
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.524 seconds
+Domain Reload Profiling: 2429ms
+	BeginReloadAssembly (242ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (14ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (57ms)
+	RebuildCommonClasses (48ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (35ms)
+	LoadAllAssembliesAndSetupDomain (564ms)
+		LoadAssemblies (568ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (129ms)
+			TypeCache.Refresh (45ms)
+				TypeCache.ScanAssembly (5ms)
+			ScanForSourceGeneratedMonoScriptInfo (65ms)
+			ResolveRequiredComponents (18ms)
+	FinalizeReload (1525ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (618ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (7ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (90ms)
+			ProcessInitializeOnLoadAttributes (464ms)
+			ProcessInitializeOnLoadMethodAttributes (50ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (31ms)
+Refreshing native plugins compatible for Editor in 8.10 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5517 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (0.9 MB). Loaded Objects now: 6137.
+Memory consumption went from 194.6 MB to 193.7 MB.
+Total: 7.025400 ms (FindLiveObjects: 0.662200 ms CreateObjectMapping: 0.989800 ms MarkObjects: 4.686400 ms  DeleteObjects: 0.685300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:FusionILWeaverTriggerImporter/ConfigHash: b0b173a93bb19085723cb3d421b3a13b -> 
+  custom:scripting/monoscript/fileName/NetworkInputData.cs: d9598b8ba5c083eeb7b57e7d40846274 -> 547c7028f4252f6ebdfbb838ba2285fa
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/NetworkInputData_RAZOR.cs: 48f8907c6faaaed85e204889a4a759d6 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:Fusion.ScriptOrderDependency: 4b8af03305881e9f759ed98475040ae8 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 75d3b8e601a159eb8169f6a51bc2d187 -> e315aae8384f31ec2415b965b65ad7cd
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.351 seconds
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.132 seconds
+Domain Reload Profiling: 4483ms
+	BeginReloadAssembly (230ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (13ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (58ms)
+	RebuildCommonClasses (47ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (40ms)
+	LoadAllAssembliesAndSetupDomain (1016ms)
+		LoadAssemblies (954ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (185ms)
+			TypeCache.Refresh (61ms)
+				TypeCache.ScanAssembly (2ms)
+			ScanForSourceGeneratedMonoScriptInfo (88ms)
+			ResolveRequiredComponents (32ms)
+	FinalizeReload (3133ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (777ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			SetLoadedEditorAssemblies (14ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (132ms)
+			ProcessInitializeOnLoadAttributes (571ms)
+			ProcessInitializeOnLoadMethodAttributes (50ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (18ms)
+Refreshing native plugins compatible for Editor in 17.01 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5517 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (0.9 MB). Loaded Objects now: 6142.
+Memory consumption went from 194.6 MB to 193.7 MB.
+Total: 5.626400 ms (FindLiveObjects: 0.562200 ms CreateObjectMapping: 0.397300 ms MarkObjects: 4.187900 ms  DeleteObjects: 0.477300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:FusionILWeaverTriggerImporter/ConfigHash: b0b173a93bb19085723cb3d421b3a13b -> 
+  custom:scripting/monoscript/fileName/NetworkInputData.cs: d9598b8ba5c083eeb7b57e7d40846274 -> 547c7028f4252f6ebdfbb838ba2285fa
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/NetworkInputData_RAZOR.cs: 48f8907c6faaaed85e204889a4a759d6 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:Fusion.ScriptOrderDependency: 4b8af03305881e9f759ed98475040ae8 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 75d3b8e601a159eb8169f6a51bc2d187 -> e315aae8384f31ec2415b965b65ad7cd
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.737 seconds
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.064 seconds
+Domain Reload Profiling: 3802ms
+	BeginReloadAssembly (206ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (13ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (50ms)
+	RebuildCommonClasses (37ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (35ms)
+	LoadAllAssembliesAndSetupDomain (445ms)
+		LoadAssemblies (479ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (78ms)
+			TypeCache.Refresh (23ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (37ms)
+			ResolveRequiredComponents (17ms)
+	FinalizeReload (3066ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (766ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (8ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (89ms)
+			ProcessInitializeOnLoadAttributes (573ms)
+			ProcessInitializeOnLoadMethodAttributes (85ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (23ms)
+Refreshing native plugins compatible for Editor in 9.63 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5517 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (0.9 MB). Loaded Objects now: 6147.
+Memory consumption went from 194.5 MB to 193.7 MB.
+Total: 6.574900 ms (FindLiveObjects: 1.067000 ms CreateObjectMapping: 0.815100 ms MarkObjects: 4.096400 ms  DeleteObjects: 0.594800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:FusionILWeaverTriggerImporter/ConfigHash: b0b173a93bb19085723cb3d421b3a13b -> 
+  custom:scripting/monoscript/fileName/NetworkInputData.cs: d9598b8ba5c083eeb7b57e7d40846274 -> 547c7028f4252f6ebdfbb838ba2285fa
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/NetworkInputData_RAZOR.cs: 48f8907c6faaaed85e204889a4a759d6 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:Fusion.ScriptOrderDependency: 4b8af03305881e9f759ed98475040ae8 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 75d3b8e601a159eb8169f6a51bc2d187 -> e315aae8384f31ec2415b965b65ad7cd
+========================================================================
+Received Import Request.
+  Time since last request: 319.245625 seconds.
+  path: Assets/Scripts/NetworkInputData_RAZOR.cs
+  artifactKey: Guid(e8f276a5d8984724ca82c79404c251bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/NetworkInputData_RAZOR.cs using Guid(e8f276a5d8984724ca82c79404c251bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd7bc62966a5855554406d0f807434e32') in 0.004037 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 304.078734 seconds.
+  path: Assets/Prefab/PlayerPrefab.prefab
+  artifactKey: Guid(3e951011099616740b5f08e10132026d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/PlayerPrefab.prefab using Guid(3e951011099616740b5f08e10132026d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f0635f445e1536262cab3b3015d56578') in 0.007731 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 78.175347 seconds.
+  path: Assets/Scripts/Player/PlayerController.cs
+  artifactKey: Guid(19802b3f862b1834ea632a63367c35f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/PlayerController.cs using Guid(19802b3f862b1834ea632a63367c35f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fa2e5b572a6f7edad84c2056d34256d1') in 0.003484 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 21.223507 seconds.
+  path: Assets/Scripts/Player/PlayerController.cs
+  artifactKey: Guid(19802b3f862b1834ea632a63367c35f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/PlayerController.cs using Guid(19802b3f862b1834ea632a63367c35f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '07047a573e0a7adb7d737421a82de4f2') in 0.002253 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 187.463549 seconds.
+  path: Assets/Scripts/Player/PlayerController.cs
+  artifactKey: Guid(19802b3f862b1834ea632a63367c35f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/PlayerController.cs using Guid(19802b3f862b1834ea632a63367c35f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '8c3267d43ef48537193c26647992506c') in 0.001794 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 7.067760 seconds.
+  path: Assets/Scripts/Player/PlayerController.cs
+  artifactKey: Guid(19802b3f862b1834ea632a63367c35f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/PlayerController.cs using Guid(19802b3f862b1834ea632a63367c35f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0651181a14f6d2b600789abc06732835') in 0.002130 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 43.974826 seconds.
+  path: Assets/Scripts/Player/PlayerController.cs
+  artifactKey: Guid(19802b3f862b1834ea632a63367c35f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/PlayerController.cs using Guid(19802b3f862b1834ea632a63367c35f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'e204b18549c4e6acf59f5ad2b380a7d4') in 0.005817 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  5.254 seconds
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  5.518 seconds
+Domain Reload Profiling: 10776ms
+	BeginReloadAssembly (1171ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (134ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (2ms)
+		CreateAndSetChildDomain (473ms)
+	RebuildCommonClasses (134ms)
+	RebuildNativeTypeToScriptingClass (25ms)
+	initialDomainReloadingComplete (82ms)
+	LoadAllAssembliesAndSetupDomain (3843ms)
+		LoadAssemblies (4074ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (174ms)
+			TypeCache.Refresh (48ms)
+				TypeCache.ScanAssembly (3ms)
+			ScanForSourceGeneratedMonoScriptInfo (88ms)
+			ResolveRequiredComponents (37ms)
+	FinalizeReload (5520ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1824ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (15ms)
+			SetLoadedEditorAssemblies (21ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (223ms)
+			ProcessInitializeOnLoadAttributes (1353ms)
+			ProcessInitializeOnLoadMethodAttributes (197ms)
+			AfterProcessingInitializeOnLoad (10ms)
+			EditorAssembliesLoaded (4ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (114ms)
+Refreshing native plugins compatible for Editor in 26.92 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5517 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (0.9 MB). Loaded Objects now: 6152.
+Memory consumption went from 194.6 MB to 193.7 MB.
+Total: 43.779000 ms (FindLiveObjects: 2.418400 ms CreateObjectMapping: 5.912200 ms MarkObjects: 31.678400 ms  DeleteObjects: 3.764700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:FusionILWeaverTriggerImporter/ConfigHash: b0b173a93bb19085723cb3d421b3a13b -> 
+  custom:scripting/monoscript/fileName/NetworkInputData.cs: d9598b8ba5c083eeb7b57e7d40846274 -> 547c7028f4252f6ebdfbb838ba2285fa
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/NetworkInputData_RAZOR.cs: 48f8907c6faaaed85e204889a4a759d6 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:Fusion.ScriptOrderDependency: 4b8af03305881e9f759ed98475040ae8 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 75d3b8e601a159eb8169f6a51bc2d187 -> e315aae8384f31ec2415b965b65ad7cd
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 18.49 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (0.9 MB). Loaded Objects now: 6152.
+Memory consumption went from 109.3 MB to 108.4 MB.
+Total: 22.214300 ms (FindLiveObjects: 5.636800 ms CreateObjectMapping: 1.263800 ms MarkObjects: 14.000500 ms  DeleteObjects: 1.307300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:FusionILWeaverTriggerImporter/ConfigHash: b0b173a93bb19085723cb3d421b3a13b -> 
+  custom:scripting/monoscript/fileName/NetworkInputData.cs: d9598b8ba5c083eeb7b57e7d40846274 -> 547c7028f4252f6ebdfbb838ba2285fa
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/NetworkInputData_RAZOR.cs: 48f8907c6faaaed85e204889a4a759d6 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:Fusion.ScriptOrderDependency: 4b8af03305881e9f759ed98475040ae8 -> 
+  custom:Fusion.PrefabsDependency: 886ebd01e0c23568aa8c7997a79480b9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 75d3b8e601a159eb8169f6a51bc2d187 -> e315aae8384f31ec2415b965b65ad7cd
+========================================================================
+Received Import Request.
+  Time since last request: 207.089895 seconds.
+  path: Assets/Prefab/PlayerPrefab.prefab
+  artifactKey: Guid(3e951011099616740b5f08e10132026d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/PlayerPrefab.prefab using Guid(3e951011099616740b5f08e10132026d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f0635f445e1536262cab3b3015d56578') in 0.038010 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 5.977276 seconds.
+  path: Assets/Resources/Sprite/kenney_shape-characters/Vector
+  artifactKey: Guid(ad22e948ecb15d94fba470c7937925ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_shape-characters/Vector using Guid(ad22e948ecb15d94fba470c7937925ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ee9cdb71524e3704dc082174cbaac276') in 0.001476 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 39.264903 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe
+  artifactKey: Guid(7a6762281868a4d41bc5defc8adf04fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe using Guid(7a6762281868a4d41bc5defc8adf04fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'de9b9411a11b055b2c3bb5e434f8db67') in 0.001198 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.052367 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/preview.png
+  artifactKey: Guid(b5603f76ba4489240ab08ec0f8cc037f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/preview.png using Guid(b5603f76ba4489240ab08ec0f8cc037f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '499d73884fa3c349f07048c033f35aff') in 0.116205 seconds
+ -> (artifact id: 'a5baa314c0bb698152774b1646b61331') in 0.501652 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 28.394342 seconds.
-  path: Assets/Photon/Fusion/Runtime/FusionBootstrapDebugGUIStartWindow.png
-  artifactKey: Guid(a7a6709449d68482c8c03bb546ddcaec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/Fusion/Runtime/FusionBootstrapDebugGUIStartWindow.png using Guid(a7a6709449d68482c8c03bb546ddcaec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '3e8854a4d65fc204bc04a03cff66b748') in 0.024330 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 1.184244 seconds.
-  path: Assets/Photon/Fusion/Editor/FusionRunnerVisibilityControlsWindow.cs
-  artifactKey: Guid(b0b9919e3f6641c4dbd365521e52c809) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/Fusion/Editor/FusionRunnerVisibilityControlsWindow.cs using Guid(b0b9919e3f6641c4dbd365521e52c809) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'b1bf5eff0bfc91ade7f6b81363ffbdf6') in 0.000638 seconds
+  Time since last request: 0.000079 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Base pack
+  artifactKey: Guid(1e3c8b174840f1b469edf5f8af1a9a58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Base pack using Guid(1e3c8b174840f1b469edf5f8af1a9a58) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '94216e936eb86634c0e6281cdb499571') in 0.001476 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.648932 seconds.
-  path: Assets/Photon/Fusion/Runtime/FusionBootstrapDebugGUIStartButtonDown.png
-  artifactKey: Guid(c90b937da87ec4183bab56bc75798697) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Photon/Fusion/Runtime/FusionBootstrapDebugGUIStartButtonDown.png using Guid(c90b937da87ec4183bab56bc75798697) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'a173d344847a9e318dc46366a20c30ec') in 0.015415 seconds
+  Time since last request: 1.233439 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Candy expansion
+  artifactKey: Guid(6976c8e4843750940bf9c7baf2b248fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Candy expansion using Guid(6976c8e4843750940bf9c7baf2b248fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '159f48948169cee1478c50fe9bf03f8e') in 0.000824 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.479648 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies
+  artifactKey: Guid(6b795071e4d75c74fbb8b4cff2afcd84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies using Guid(6b795071e4d75c74fbb8b4cff2afcd84) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b16a4327dc69a8d48b92524f52a3b9da') in 0.000594 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.422706 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/preview.png
+  artifactKey: Guid(14c218568cdcfaa4aa4985b9832fa789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/preview.png using Guid(14c218568cdcfaa4aa4985b9832fa789) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a29a072182afcbb548950a93c0fa6831') in 0.034906 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 2.312291 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites
+  artifactKey: Guid(b7517f2c37a0c114795707cc3d774874) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites using Guid(b7517f2c37a0c114795707cc3d774874) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3a7392fb25c5702dfb6d83a70969f965') in 0.001161 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.116075 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/barnacle.png
+  artifactKey: Guid(c67b54c14f313c849877b89839dafbd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/barnacle.png using Guid(c67b54c14f313c849877b89839dafbd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a14e2f41ed7e06f1464b9725e217b516') in 0.032735 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/bee.png
+  artifactKey: Guid(9a0128bb5c4135a45a521eb1ea2f9a89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/bee.png using Guid(9a0128bb5c4135a45a521eb1ea2f9a89) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '85aef2be170e76ec525a432ff100ece8') in 0.035513 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/fishGreen.png
+  artifactKey: Guid(60cb3474e7f40ee4a927fb9f355a29f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/fishGreen.png using Guid(60cb3474e7f40ee4a927fb9f355a29f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '18193707217c5eacaf0d401358d64335') in 0.031883 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000096 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/barnacle_hit.png
+  artifactKey: Guid(282e51dd70b5afa47993157663a24456) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/barnacle_hit.png using Guid(282e51dd70b5afa47993157663a24456) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fe41516b22fa771e7b4a7af8b0dc2f05') in 0.022991 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/frog.png
+  artifactKey: Guid(05641a35eaac85b4bbe2e9ecec15611a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/frog.png using Guid(05641a35eaac85b4bbe2e9ecec15611a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'afe3963f47de63599275882b1b75441f') in 0.028841 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/bee_hit.png
+  artifactKey: Guid(479bcc9d81392f344892b9f8680114f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/bee_hit.png using Guid(479bcc9d81392f344892b9f8680114f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b92f695c71eb8cc31e82e38affbea9a2') in 0.025408 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000087 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/fishPink_swim.png
+  artifactKey: Guid(c9feebbc456fa1c43a210f260d43d4ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/fishPink_swim.png using Guid(c9feebbc456fa1c43a210f260d43d4ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '5a23e4de7059db846cf94b8b4dc29ae4') in 0.032498 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/fishPink.png
+  artifactKey: Guid(8f268324a98e4c542bf02a042d614b7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/fishPink.png using Guid(8f268324a98e4c542bf02a042d614b7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '65bbb676259621388e8fc34dffd1444d') in 0.024220 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/fly_hit.png
+  artifactKey: Guid(c023037c973f90e49bdc93d2e6d55c86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/fly_hit.png using Guid(c023037c973f90e49bdc93d2e6d55c86) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c3e31d4217b51a472d01153282078960') in 0.028869 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/barnacle_dead.png
+  artifactKey: Guid(d621ece5fc14a494f97ea192fb394351) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/barnacle_dead.png using Guid(d621ece5fc14a494f97ea192fb394351) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '17e7a5f36351748a81e6b4ade12e1f27') in 0.027947 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/fly_dead.png
+  artifactKey: Guid(156f098a0ca9cd44a9c1c85ac3d8742e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/fly_dead.png using Guid(156f098a0ca9cd44a9c1c85ac3d8742e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a8d558fde63565dec3fb18517ab8890d') in 0.024583 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/fly.png
+  artifactKey: Guid(29884e5c6ca830447b6e6e6d1806bacd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/fly.png using Guid(29884e5c6ca830447b6e6e6d1806bacd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '88aa3a92c9b9b8784a8942bb47830df6') in 0.031351 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/bee_fly.png
+  artifactKey: Guid(6cdcc200dad328a46bfa3ee885a91cb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/bee_fly.png using Guid(6cdcc200dad328a46bfa3ee885a91cb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6e22185259e0467f1c5258db8ae3b20b') in 0.030456 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/bat_fly.png
+  artifactKey: Guid(03199a3a7ef3e45498859cc7b4cfb095) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/bat_fly.png using Guid(03199a3a7ef3e45498859cc7b4cfb095) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c2dcd51e5a02895c6bc863f8978ecdf9') in 0.024742 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.304087 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/frog_leap.png
+  artifactKey: Guid(99cdce0240f4c5a468dc98f72858ec0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/frog_leap.png using Guid(99cdce0240f4c5a468dc98f72858ec0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '86f7a8b2fd3b1fd4e1f30a52a0c5b84c') in 0.033435 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/ghost_dead.png
+  artifactKey: Guid(5d8e0bb81827aae41a6752a7a307d76d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/ghost_dead.png using Guid(5d8e0bb81827aae41a6752a7a307d76d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a400d24acbffce111d54b13b1ab64f83') in 0.027973 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/grassBlock.png
+  artifactKey: Guid(bf9c42320196a9948849daee38c64906) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/grassBlock.png using Guid(bf9c42320196a9948849daee38c64906) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a663b2f4462d8adf825ff9f3aeeb9f8a') in 0.038026 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000080 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/ladyBug.png
+  artifactKey: Guid(48792e07a06bf824ebb4e07d41cea7f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/ladyBug.png using Guid(48792e07a06bf824ebb4e07d41cea7f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0cd4813bf765de6e6873da9db1acc3ac') in 0.031741 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000374 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/grassBlock_dead.png
+  artifactKey: Guid(91c09fa7c462d9544bac6e4100b76898) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/grassBlock_dead.png using Guid(91c09fa7c462d9544bac6e4100b76898) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b57818f8657653359d4d8d3601d0bfda') in 0.035189 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/mouse_walk.png
+  artifactKey: Guid(8d06a268cbebcb345a343b1da99a2f35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/mouse_walk.png using Guid(8d06a268cbebcb345a343b1da99a2f35) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b9ef6663258f0e70379fa59b5e88dc41') in 0.037836 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000090 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/mouse_dead.png
+  artifactKey: Guid(320bf3af54a069049a8376feac90ed39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/mouse_dead.png using Guid(320bf3af54a069049a8376feac90ed39) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f3032170a1a072e91666a1b24785b416') in 0.040303 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/ghost_hit.png
+  artifactKey: Guid(a59a6ad28415f644e9509bfe09365645) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/ghost_hit.png using Guid(a59a6ad28415f644e9509bfe09365645) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '33a64044bdbe0eb2b2f2793c9cd127b8') in 0.053601 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/mouse.png
+  artifactKey: Guid(4006c801e83f69c45a2cb6d9af887a33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/mouse.png using Guid(4006c801e83f69c45a2cb6d9af887a33) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a4143f3204869b9dbd4473eee2f47ff4') in 0.057905 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.052682 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/piranha_dead.png
+  artifactKey: Guid(cde6be2ffb2b2ca438ddf54c5325f540) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/piranha_dead.png using Guid(cde6be2ffb2b2ca438ddf54c5325f540) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '012d24adf2cbaeb2e218c7855b7e9311') in 0.069390 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/slime_hit.png
+  artifactKey: Guid(deccef9dcec9f7347bafefa24cbcc1b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/slime_hit.png using Guid(deccef9dcec9f7347bafefa24cbcc1b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '78085b9fbe4045ce0856312bae428d25') in 0.042895 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000081 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/slime.png
+  artifactKey: Guid(0277d7f7ea2652f40ba0b029f94af4c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/slime.png using Guid(0277d7f7ea2652f40ba0b029f94af4c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '5be48112f992044da00d06307e385ffe') in 0.031554 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000078 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/piranha_hit.png
+  artifactKey: Guid(69a2f853fda883c40bb649d386b8b68e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/piranha_hit.png using Guid(69a2f853fda883c40bb649d386b8b68e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c7a1bbb205fe933e8947ca52d3c715ae') in 0.034280 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/slime_dead.png
+  artifactKey: Guid(9073d0cc131fb1f4d99904a726a1094d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/slime_dead.png using Guid(9073d0cc131fb1f4d99904a726a1094d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3c9c7a4dcb5a9d2b2dc2e07bf6e5f6ef') in 0.029376 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.166962 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/slimeBlock_dead.png
+  artifactKey: Guid(acbef78efe924274fa0a8e8419cd4925) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/slimeBlock_dead.png using Guid(acbef78efe924274fa0a8e8419cd4925) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '29c79f2d6b432acddecfcd71f3a64849') in 0.025031 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/slimeGreen.png
+  artifactKey: Guid(988209fecfe525541b81d21002fed514) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/slimeGreen.png using Guid(988209fecfe525541b81d21002fed514) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '8656d55e0bb55e3571ff30178f7abdd3') in 0.025704 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/slimeGreen_hit.png
+  artifactKey: Guid(f7d6b6f95991de0439b356cf8dd28ffb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/slimeGreen_hit.png using Guid(f7d6b6f95991de0439b356cf8dd28ffb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c7dd9f37d06dd166bf12dd7ca9505dfc') in 0.016496 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/snail_walk.png
+  artifactKey: Guid(addcfff753e4da247bcca1c901cd53b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/snail_walk.png using Guid(addcfff753e4da247bcca1c901cd53b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '406a15cc19cc76fa08dc777540575072') in 0.031451 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/snake_dead.png
+  artifactKey: Guid(b731627deab955947968be7af6524297) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/snake_dead.png using Guid(b731627deab955947968be7af6524297) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '49e26aa019d03c9d468c37fb94f045de') in 0.028305 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/snail.png
+  artifactKey: Guid(a40cd6484f21e7c4dac7ff40521f386c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/snail.png using Guid(a40cd6484f21e7c4dac7ff40521f386c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '42199f49db4e612fe2ffbffee9767dc1') in 0.024758 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/slimeGreen_dead.png
+  artifactKey: Guid(17b0a96152d4aeb4cbe431e831295d2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/slimeGreen_dead.png using Guid(17b0a96152d4aeb4cbe431e831295d2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6e083a257deeb07a3b50f32cd718cd44') in 0.024662 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/slimeBlue.png
+  artifactKey: Guid(0e9fcd28d71b7c244925a74cf4a9504e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/slimeBlue.png using Guid(0e9fcd28d71b7c244925a74cf4a9504e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fbc6c2af836a25a1b5afbaa3a47e2645') in 0.024625 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/slimeBlue_dead.png
+  artifactKey: Guid(dd83252f67c4aed4e9edd207ab00cd44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/slimeBlue_dead.png using Guid(dd83252f67c4aed4e9edd207ab00cd44) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd08cef808f1613935047e7f8f02d5c96') in 0.020183 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.134871 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/snake_hit.png
+  artifactKey: Guid(1ff990eb548bb6a44973bf789768b8ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/snake_hit.png using Guid(1ff990eb548bb6a44973bf789768b8ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '5b541140b1cc7aabd3871025ed2fee16') in 0.021320 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/snakeLava_hit.png
+  artifactKey: Guid(6d605a33da4ed9d438fb0f3f7269eba9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/snakeLava_hit.png using Guid(6d605a33da4ed9d438fb0f3f7269eba9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '9b73dd4c89d8c4b9dc55c8abd7330142') in 0.021761 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/snakeSlime_dead.png
+  artifactKey: Guid(6a0c020a470ab6846baeff4abcf691e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/snakeSlime_dead.png using Guid(6a0c020a470ab6846baeff4abcf691e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4030132e1189909f15822430cddf577d') in 0.028459 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/snakeLava_dead.png
+  artifactKey: Guid(e6d206e97bf6fc446b9c9337470b8fd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/snakeLava_dead.png using Guid(e6d206e97bf6fc446b9c9337470b8fd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f79f1913ce6c8db6e15c16fdc3cd2adb') in 0.026387 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/snakeLava.png
+  artifactKey: Guid(91cb93a810e338d4a886aa9232390b41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/snakeLava.png using Guid(91cb93a810e338d4a886aa9232390b41) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd9a9d1e05f0db4437b17b2b0e9650a81') in 0.022332 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.216365 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/snakeSlime_hit.png
+  artifactKey: Guid(64bb7a76411e458419477de997ac016d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/snakeSlime_hit.png using Guid(64bb7a76411e458419477de997ac016d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '146c177a01d8eb131d4b09d4b8a3c31b') in 0.017238 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/spider_walk1.png
+  artifactKey: Guid(eb403051f37d7a44995ccee1273a4963) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/spider_walk1.png using Guid(eb403051f37d7a44995ccee1273a4963) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2118070bfaab03ed52e5a9a9677f3bf6') in 0.032593 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000068 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/spider_hit.png
+  artifactKey: Guid(fb73086c4857347488daf40c837ba829) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/spider_hit.png using Guid(fb73086c4857347488daf40c837ba829) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '33eb176703362e73c56d935134771f50') in 0.030369 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/spinner_hit.png
+  artifactKey: Guid(03765b4fd80a578458c239bdcd8bec3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/spinner_hit.png using Guid(03765b4fd80a578458c239bdcd8bec3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '11036eb8cc5d99189562c52c90b21ed2') in 0.027844 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/spinnerHalf_hit.png
+  artifactKey: Guid(02d32e195187b6e46b973975a2016bf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/spinnerHalf_hit.png using Guid(02d32e195187b6e46b973975a2016bf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '52cd0842457aa40fb6ccd8c665483fed') in 0.032550 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/spider_dead.png
+  artifactKey: Guid(6d1f6eb62708dca47bf051d5b7bb2539) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/spider_dead.png using Guid(6d1f6eb62708dca47bf051d5b7bb2539) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'eae11b50930b53b3c4cb76bf64d3abd2') in 0.024288 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/spinnerHalf.png
+  artifactKey: Guid(6a30f3e6ee91a874bb5d26c4fb4b05d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/spinnerHalf.png using Guid(6a30f3e6ee91a874bb5d26c4fb4b05d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'eb631777970dc2d7be756c824b4bd570') in 0.031128 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/spinner.png
+  artifactKey: Guid(e6d1b36bb67a759419f7183b99c27c52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/spinner.png using Guid(e6d1b36bb67a759419f7183b99c27c52) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '982173641aa90117ef581b7bd2069b49') in 0.028954 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/spinner_spin.png
+  artifactKey: Guid(002bdbb9e8a0d254cbaac97c2cd6e7c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Enemy sprites/spinner_spin.png using Guid(002bdbb9e8a0d254cbaac97c2cd6e7c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '706ebf099fc5505c2617cc2e51039003') in 0.032982 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 44.558550 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Spritesheets/alienBlue.png
+  artifactKey: Guid(1e16d630bb120e24595c265dd5581b2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Spritesheets/alienBlue.png using Guid(1e16d630bb120e24595c265dd5581b2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '49b22be713bd11e169e3223d7a8c3c1b') in 0.027810 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Spritesheets/enemies.png
+  artifactKey: Guid(d449d609adf0e2a4a98c84fedc594829) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Spritesheets/enemies.png using Guid(d449d609adf0e2a4a98c84fedc594829) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f7fa654ff1741fc108555d0f7e5e8064') in 0.028449 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Spritesheets/alienYellow.png
+  artifactKey: Guid(69dd79416648c5d47aaf185acf1f155b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprite/kenney_platformer-art-deluxe/Extra animations and enemies/Spritesheets/alienYellow.png using Guid(69dd79416648c5d47aaf185acf1f155b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ac896473d799c4af454ad05afd8a23cc') in 0.025675 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: 스레드 종료 또는 응용 프로그램 요청 때문에 I/O 작업이 취소되었습니다.
 AssetImportWorker is now disconnected from the server

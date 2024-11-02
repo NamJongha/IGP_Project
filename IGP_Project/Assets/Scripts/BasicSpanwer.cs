@@ -31,16 +31,21 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
-        var data = new NetworkInputData();
+        var data = new NetworkInputData_tutorial();
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            data.direction += Vector3.right;
+            //data.direction += Vector3.right;
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            data.direction += Vector3.left;
+            //data.direction += Vector3.left;
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            
         }
 
         input.Set(data);

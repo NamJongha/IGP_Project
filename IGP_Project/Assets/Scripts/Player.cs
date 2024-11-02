@@ -1,19 +1,32 @@
 using Fusion;
+using NetworkRigidbody2D = Fusion.Addons.Physics.NetworkRigidbody2D;
 
 public class Player : NetworkBehaviour
 {
-    private NetworkCharacterController _cc;
+    private NetworkRigidbody2D _rb;
 
     private void Awake()
     {
-        _cc = GetComponent<NetworkCharacterController>();
+        _rb = GetComponent<NetworkRigidbody2D>();
     }
     public override void FixedUpdateNetwork()
     {
-        if(GetInput(out NetworkInputData data))
+        if(GetInput<NetworkInputData_tutorial>(out var input))
         {
-            data.direction.Normalize();
-            _cc.Move(5 * data.direction * Runner.DeltaTime);
+            
+        }
+    }
+
+    void UpdateMovement(NetworkInputData_tutorial input)
+    {
+        if (input.GetButton(InputButton.LEFT))
+        {
+
+        }
+
+        else if (input.GetButton(InputButton.RIGHT))
+        {
+
         }
     }
 }
