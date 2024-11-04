@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerInputHandler : MonoBehaviour
 {
     PlayerController playerController;
 
     Vector2 inputVector = Vector2.zero;
+    float portalInput = 0;
+    float useItemInput = 0;
+    float emotionInput = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -14,10 +18,13 @@ public class PlayerInputHandler : MonoBehaviour
         playerController = GetComponent<PlayerController>();
     }
 
-    // Update is called once per frame
+    //Recognition of player's input
     void Update()
     {
         inputVector = Vector2.zero;
+        portalInput = 0;
+        useItemInput = 0;
+        emotionInput = 0;
 
         //inputVector.x = Input.GetAxisRaw("Horizontal");
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -29,18 +36,52 @@ public class PlayerInputHandler : MonoBehaviour
             inputVector.x = 1;
         }
 
+        //jump
         if (Input.GetKey(KeyCode.Space))
         {
             inputVector.y = 1;
         }
 
+        //enter portal
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            portalInput = 1;
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            portalInput = 2;
+        }
+
+        //use Item
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            useItemInput = 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            useItemInput = 2;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            emotionInput = 1;
+        }
+
         playerController.SetInputVector(inputVector);
+        playerController.SetEnterPortal(portalInput);
+        playerController.SetUseItem(useItemInput);
+        playerController.SetEmotion(emotionInput);
     }
 
+    //send player's input data to host
     public NetworkInputData GetNetworkInput()
     {
         NetworkInputData networkInputData = new NetworkInputData();
         networkInputData.direction = inputVector;
+        networkInputData.enterPortal = portalInput;
+        networkInputData.useItem = useItemInput;
+        networkInputData.emotion = emotionInput;
 
         return networkInputData;
     }

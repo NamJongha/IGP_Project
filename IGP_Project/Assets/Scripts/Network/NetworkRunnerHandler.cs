@@ -7,21 +7,40 @@ using UnityEngine.SceneManagement;
 using System.Threading.Tasks;
 using System;
 using System.Linq;
+using TMPro;
 using NanoSockets;
+using UnityEngine.UI;
 
 public class NetworkRunnerHandler : MonoBehaviour
 {
     //other components
     NetworkRunner networkRunner;
 
+    [SerializeField] private TMP_InputField roomName;
+    [SerializeField] private Button enterRoomButton;
+    [SerializeField] private Canvas LobbyUI;
+    private String roomCode;
+
     private void Awake()
     {
         networkRunner = GetComponent<NetworkRunner>();
+
+        enterRoomButton.onClick.AddListener(StartWithRoomCode);
     }
 
-    void Start()
+    void StartWithRoomCode()
     {
-        var clientTask = InitializeNetworkRunner(networkRunner, GameMode.AutoHostOrClient, NetAddress.Any(), SceneRef.FromIndex(SceneManager.GetActiveScene().buildIndex), null);
+        roomCode = roomName.text;
+
+        if (roomCode != null)
+        {
+            var clientTask = InitializeNetworkRunner(networkRunner, GameMode.AutoHostOrClient, NetAddress.Any(), SceneRef.FromIndex(SceneManager.GetActiveScene().buildIndex), null);
+            LobbyUI.gameObject.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("Please enter the room code");
+        }
     }
 
     protected virtual Task InitializeNetworkRunner(NetworkRunner runner, GameMode gameMode, NetAddress address, SceneRef scene, Action<NetworkRunner> initialized) 
@@ -41,10 +60,16 @@ public class NetworkRunnerHandler : MonoBehaviour
         {
             GameMode = gameMode,
             Address = address,
-            Scene = scene,
-            SessionName = "Room",
+            Scene = SceneRef.FromIndex(1),
+            SessionName = roomCode,
             OnGameStarted = initialized,
             SceneManager = sceneObjectProvider
         });
+    }
+
+    private void OnGameStarted(NetworkRunnerHandler runner)
+    {
+        Debug.Log("GameStart");
+        SceneManager.LoadScene("BasicScene");
     }
 }

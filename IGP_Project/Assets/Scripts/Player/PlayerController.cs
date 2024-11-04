@@ -15,26 +15,40 @@ public class PlayerController : NetworkBehaviour
 
     float moveInput = 0;
     float jumpInput = 0;
+    float portalInput = 0;
+    float useItemInput = 0;
+    float emotionInput = 0;
 
+    bool isInPortal = false;
+    bool hasItem = false; //flag if the player has item
 
     Rigidbody2D playerRB2D;
+    PlayerCollisionHandler collisionHandler;
 
     private void Awake()
     {
         playerRB2D = GetComponent<Rigidbody2D>();
+        collisionHandler = GetComponent<PlayerCollisionHandler>();
     }
 
+    //clinets get input data from host
     public override void FixedUpdateNetwork()
     {
         if(GetInput(out NetworkInputData data))
         {
             moveInput = data.direction.x;
             jumpInput = data.direction.y;
+            portalInput = data.enterPortal;
+            useItemInput = data.useItem;
         }
 
         Movement();
 
         Jumping();
+
+        onPortal();
+
+        usingItem();
     }
 
     private bool IsGrounded()
@@ -56,9 +70,61 @@ public class PlayerController : NetworkBehaviour
         }
     }
 
+    private void onPortal()
+    {
+        //enterPortal: player's input, getPortalValue: is Player is on the portal
+        if(portalInput == 1 && collisionHandler.getPortalValue() == 1)
+        {
+            //do enter portal
+        }
+
+        //exitPortal
+        if (portalInput == 2 && collisionHandler.getPortalValue() == 1)
+        {
+            if (isInPortal == true)
+            {
+                //do exit portal
+            }
+        }
+    }
+
+    private void usingItem()
+    {
+        if (useItemInput == 1 && hasItem)//if player pressed item use key and having item
+        {
+            //use item
+            //get item's properties if it is dash or double jump
+        }
+
+        else if (useItemInput == 2 && hasItem)
+        {
+            //drop item
+        }
+    }
+
+    private void representEmotion()
+    {
+        //show different emotion according to emotionInput value
+    }
+
     public void SetInputVector(Vector2 inputVector)
     {
         moveInput = inputVector.x;
         jumpInput = inputVector.y;
+    }
+
+    public void SetEnterPortal(float portalPressed)
+    {
+        portalInput = portalPressed;
+    }
+
+    public void SetUseItem(float useItemPressed)
+    {
+        useItemInput = useItemPressed;
+    }
+
+    public void SetEmotion(float emotionNum)
+    {
+        emotionInput = emotionNum;
     }
 }
