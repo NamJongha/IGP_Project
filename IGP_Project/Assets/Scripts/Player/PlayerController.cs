@@ -75,12 +75,20 @@ public class PlayerController : NetworkBehaviour
 
     private void onPortal()
     {
+        if(collisionHandler.getPortalValue() != 1)
+        {
+            this.GetComponent<Rigidbody2D>().gravityScale = 9.8f;
+            this.GetComponentInChildren<BoxCollider2D>().isTrigger = false;
+            this.GetComponentInChildren<SpriteRenderer>().enabled = true;
+            isInPortal = false;
+        }
+
         //enterPortal: player's input, getPortalValue: is Player is on the portal
         if(portalInput == 1 && collisionHandler.getPortalValue() == 1)
         {
             isInPortal = true;
             this.GetComponent<Rigidbody2D>().gravityScale = 0;
-            this.GetComponentInChildren<BoxCollider2D>().enabled = false;
+            this.GetComponentInChildren<BoxCollider2D>().isTrigger = true;
             this.GetComponentInChildren<SpriteRenderer>().enabled = false;
 
         }
@@ -89,7 +97,7 @@ public class PlayerController : NetworkBehaviour
         if (portalInput == 2 && isInPortal)
         {
             this.GetComponent<Rigidbody2D>().gravityScale = 9.8f;
-            this.GetComponentInChildren<BoxCollider2D>().enabled = true;
+            this.GetComponentInChildren<BoxCollider2D>().isTrigger = false;
             this.GetComponentInChildren<SpriteRenderer>().enabled = true;
             isInPortal = false;
         }

@@ -57,11 +57,13 @@ public class NetworkPlayerSpawner : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnInput(NetworkRunner runner, NetworkInput Input)
     {
+        //if the player on the screen is local player
         if(localPlayerInputHandler == null && NetworkPlayer.Local != null)
         {
             localPlayerInputHandler = NetworkPlayer.Local.GetComponent<PlayerInputHandler>();
         }
 
+        //if the player on the screen is other player
         if (localPlayerInputHandler != null)
         {
             Input.Set(localPlayerInputHandler.GetNetworkInput());
