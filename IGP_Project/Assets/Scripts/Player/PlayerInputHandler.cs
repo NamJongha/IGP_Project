@@ -43,12 +43,14 @@ public class PlayerInputHandler : MonoBehaviour
         }
 
         //enter portal
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
+            Debug.Log("Pressed Down");
             portalInput = 1;
         }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        else if (Input.GetKey(KeyCode.UpArrow))
         {
+            Debug.Log("Pressed Up");
             portalInput = 2;
         }
 

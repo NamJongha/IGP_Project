@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SpawnPoint
   - Item
+  - Portal
   layers:
   - Default
   - TransparentFX

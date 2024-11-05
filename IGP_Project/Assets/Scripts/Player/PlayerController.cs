@@ -42,13 +42,16 @@ public class PlayerController : NetworkBehaviour
             useItemInput = data.useItem;
         }
 
-        Movement();
+        if (!isInPortal)
+        {
+            Movement();
 
-        Jumping();
+            Jumping();
+
+            usingItem();
+        }
 
         onPortal();
-
-        usingItem();
     }
 
     private bool IsGrounded()
@@ -75,16 +78,20 @@ public class PlayerController : NetworkBehaviour
         //enterPortal: player's input, getPortalValue: is Player is on the portal
         if(portalInput == 1 && collisionHandler.getPortalValue() == 1)
         {
-            //do enter portal
+            isInPortal = true;
+            this.GetComponent<Rigidbody2D>().gravityScale = 0;
+            this.GetComponentInChildren<BoxCollider2D>().enabled = false;
+            this.GetComponentInChildren<SpriteRenderer>().enabled = false;
+
         }
 
         //exitPortal
-        if (portalInput == 2 && collisionHandler.getPortalValue() == 1)
+        if (portalInput == 2 && isInPortal)
         {
-            if (isInPortal == true)
-            {
-                //do exit portal
-            }
+            this.GetComponent<Rigidbody2D>().gravityScale = 9.8f;
+            this.GetComponentInChildren<BoxCollider2D>().enabled = true;
+            this.GetComponentInChildren<SpriteRenderer>().enabled = true;
+            isInPortal = false;
         }
     }
 

@@ -2,6 +2,7 @@ using Fusion;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //Handle Network Player
 
@@ -34,5 +35,8 @@ public class NetworkPlayer : NetworkBehaviour, IPlayerLeft
         {
             Runner.Despawn(Object);
         }
+
+        Debug.Log("Player Disconnected");
+        SceneManager.LoadScene("LobbyScene");
     }
 }
