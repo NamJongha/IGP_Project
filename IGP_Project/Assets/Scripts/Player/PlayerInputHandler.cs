@@ -29,7 +29,6 @@ public class PlayerInputHandler : MonoBehaviour
         //inputVector.x = Input.GetAxisRaw("Horizontal");
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            Debug.Log("PressedLeft");
             inputVector.x = -1;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
@@ -46,27 +45,26 @@ public class PlayerInputHandler : MonoBehaviour
         //enter portal
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            Debug.Log("Pressed Down");
             portalInput = 1;
         }
         else if (Input.GetKey(KeyCode.UpArrow))
         {
-            Debug.Log("Pressed Up");
             portalInput = 2;
         }
 
         //use Item
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             useItemInput = 1;
+            Debug.Log("Pressed a");
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             useItemInput = 2;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKey(KeyCode.Alpha1))
         {
             emotionInput = 1;
         }

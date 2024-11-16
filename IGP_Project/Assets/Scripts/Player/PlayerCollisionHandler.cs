@@ -20,6 +20,14 @@ public class PlayerCollisionHandler : MonoBehaviour
         //if collided object's tag is item
         //get item's properties(if it is double jump, dash, or weapon)
         //give information to player that the player got the item(ex. set hasItem = 1)
+        //if(collision.gameObject.tag == "Item")
+        //{
+        //    Debug.Log("Collided");
+        //    //collision.gameObject.GetComponent<ItemType>().GetSprite().enabled = false;
+        //    //collision.gameObject.GetComponent<ItemType>().GetCollider().enabled = false;
+        //    int itemNum = collision.gameObject.GetComponentInParent<ItemType>().GetItemCode();
+        //    this.gameObject.GetComponent<PlayerController>().SetItemCode(itemNum);
+        //}
 
         //if collided object's tag is enemy
         //player death
@@ -31,6 +39,21 @@ public class PlayerCollisionHandler : MonoBehaviour
         {
             onPortal = 1;
             Debug.Log("Player is on Portal");
+        }
+
+        //if collided object's tag is item
+        //get item's properties(if it is double jump, dash, or weapon)
+        //give information to player that the player got the item(ex. set hasItem = 1)
+        if (collision.gameObject.tag == "Item")
+        {
+            Debug.Log("Collided");
+            collision.gameObject.GetComponent<ItemScript>().SetSprite();
+            collision.gameObject.GetComponent<ItemScript>().SetCollider();
+            collision.gameObject.GetComponent<ItemScript>().SetOffset();
+            collision.gameObject.GetComponent<ItemScript>().SetPos(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
+
+            int itemNum = collision.gameObject.GetComponentInParent<ItemType>().GetItemCode();
+            this.gameObject.GetComponent<PlayerController>().SetItemCode(itemNum);
         }
     }
 
