@@ -16,29 +16,35 @@ public class PlayerCollisionHandler : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-
-        //if collided object's tag is item
-        //get item's properties(if it is double jump, dash, or weapon)
-        //give information to player that the player got the item(ex. set hasItem = 1)
-        //if(collision.gameObject.tag == "Item")
-        //{
-        //    Debug.Log("Collided");
-        //    //collision.gameObject.GetComponent<ItemType>().GetSprite().enabled = false;
-        //    //collision.gameObject.GetComponent<ItemType>().GetCollider().enabled = false;
-        //    int itemNum = collision.gameObject.GetComponentInParent<ItemType>().GetItemCode();
-        //    this.gameObject.GetComponent<PlayerController>().SetItemCode(itemNum);
-        //}
-
         //if collided object's tag is enemy
         //player death
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        //Set player's flag of portal. if player is on the portal, player's portal value becomes 1
         if (collision.gameObject.tag == "Portal")
         {
-            onPortal = 1;
-            Debug.Log("Player is on Portal");
+            //if portal is not locked, player can interact with portal
+            if (collision.gameObject.GetComponentInParent<PortalScript>().isPortalLocked == false)
+            {
+                onPortal = 1;
+            }
+
+            //if portal is locked
+            else
+            {
+                //if player has key
+                if (this.gameObject.GetComponent<PlayerController>().GetKey() != null)
+                {
+                    //unlock the portal with key. Key will be disappeared after using it.
+                    collision.gameObject.GetComponentInParent<PortalScript>().SetLocked();
+                    this.gameObject.GetComponent<PlayerController>().GetKey().transform.parent.gameObject.SetActive(false);
+                    this.gameObject.GetComponent<PlayerController>().SetKey(null);
+                }
+
+                else return;
+            }
         }
 
         //if collided object's tag is item
@@ -47,13 +53,35 @@ public class PlayerCollisionHandler : MonoBehaviour
         if (collision.gameObject.tag == "Item")
         {
             Debug.Log("Collided");
-            collision.gameObject.GetComponent<ItemScript>().SetSprite();
-            collision.gameObject.GetComponent<ItemScript>().SetCollider();
-            collision.gameObject.GetComponent<ItemScript>().SetOffset();
-            collision.gameObject.GetComponent<ItemScript>().SetPos(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
+            if (this.gameObject.GetComponent<PlayerController>().GetItemCode() == -1)
+            {
+                //make item invisible and not collidable
+                collision.gameObject.GetComponentInParent<ItemScript>().SetSprite();//if want to debug that if acquired item is following the player, make this line annotation
+                collision.gameObject.GetComponentInParent<ItemScript>().SetCollider();
+                collision.gameObject.GetComponentInParent<ItemScript>().SetOffset();
+                collision.gameObject.GetComponentInParent<ItemScript>().SetRBDynamic();
+                
+                //set itemCode
+                int itemNum = collision.gameObject.GetComponentInParent<ItemType>().GetItemCode();
 
-            int itemNum = collision.gameObject.GetComponentInParent<ItemType>().GetItemCode();
-            this.gameObject.GetComponent<PlayerController>().SetItemCode(itemNum);
+                //make invisible item follows player
+                this.gameObject.GetComponent<PlayerController>().SetItemCode(itemNum);
+                this.gameObject.GetComponent<PlayerController>().SetCurItem(collision.gameObject);
+                collision.gameObject.GetComponentInParent<ItemScript>().SetFollow();
+            }
+            else
+            {
+                Debug.Log("Already have Item");
+                return;
+            }
+        }
+
+        //if player collided with key, and the key is not following player
+        if(collision.gameObject.tag == "Key" && collision.gameObject.GetComponentInParent<KeyScript>().GetFollowState() == false)
+        {
+            //make key follows the player
+            this.gameObject.GetComponent<PlayerController>().SetKey(collision.gameObject);
+            collision.gameObject.GetComponentInParent<KeyScript>().SetFollow();
         }
     }
 
