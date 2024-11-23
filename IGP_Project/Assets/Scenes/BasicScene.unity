@@ -983,6 +983,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb670d4c6ac08d43957c8e50e229a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomName: {fileID: 0}
+  enterRoomButton: {fileID: 0}
+  LobbyUI: {fileID: 0}
 --- !u!114 &1963003935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,7 +1012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _physicsAuthority: 2
   _physicsTiming: 3
-  ClientPhysicsSimulation: 0
+  ClientPhysicsSimulation: 1
   DeltaTimeMultiplier: 1
   SetUnityFixedTimestep: 0
 --- !u!1660057539 &9223372036854775807

@@ -7,6 +7,8 @@ TagManager:
   - SpawnPoint
   - Item
   - Portal
+  - Enemy
+  - Boundary
   layers:
   - Default
   - TransparentFX

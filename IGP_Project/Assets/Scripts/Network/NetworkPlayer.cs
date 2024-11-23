@@ -37,6 +37,7 @@ public class NetworkPlayer : NetworkBehaviour, IPlayerLeft
         }
 
         Debug.Log("Player Disconnected");
+        Runner.Despawn(Object);
         SceneManager.LoadScene("LobbyScene");
     }
 }
