@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
 using System;
+using UnityEngine.UIElements;
 
 public class PlayerController : NetworkBehaviour
 {
     [Header("Player Settings")]
     public float moveSpeed = 3f;
     public float jumpForce = 6.5f;
+    public float dashForce = 5f;
+    public float throwPow = 20f; //power of throwing item
 
     [Header("Player Ground Check")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    //player input value
     float moveInput = 0;
     float jumpInput = 0;
     float portalInput = 0;
@@ -21,9 +25,23 @@ public class PlayerController : NetworkBehaviour
     float emotionInput = 0;
 
     private bool isInPortal = false;
+
+    //variables for key
+    private int itemCode = -1; //None: -1, double jump: 0, dash: 1, weapon: 2
+    private GameObject curItem; //save acquired item's information
+    private bool isMovable = true;//for dash, if it is false, player can't controll character
+    private float lastDirection = 0;//for dash, save the last direction that player looked(moved)
+
+    private GameObject curKey;
+
+    //parameters below are for item delay(prevent infinite usage of item)
+    private bool usedJump = false;
+    private bool usedDash = false;
+
     [Networked] private bool isTrigger { get; set; }
     [Networked] private float gravityScale { get; set; }
     [Networked] private bool spriteVisible { get; set; }
+
 
     Rigidbody2D playerRB2D;
     PlayerCollisionHandler collisionHandler;
@@ -38,18 +56,26 @@ public class PlayerController : NetworkBehaviour
         collisionHandler = GetComponent<PlayerCollisionHandler>();
         playerCollider = GetComponentInChildren<BoxCollider2D>();
         playerSprite = GetComponentInChildren<SpriteRenderer>();
+        curItem = null;
+        curKey = null;
     }
 
     public override void Spawned()
     {
         base.Spawned();
 
+        //detect change of object's property
         changes = GetChangeDetector(ChangeDetector.Source.SimulationState);
 
+        //set initial properties
         gravityScale = 9.8f;
         isTrigger = false;
         spriteVisible = true;
+
         isInPortal = false;
+        itemCode = -1;
+        isMovable = true;
+        lastDirection = 0;
     }
 
     //clinets get input data from host
@@ -63,18 +89,28 @@ public class PlayerController : NetworkBehaviour
             useItemInput = data.useItem;
         }
 
-        if (isInPortal == false)
+        if(moveInput != 0)
         {
-            Movement();
-
-            Jumping();
-
-            UsingItem();
+            lastDirection = moveInput;
         }
 
         if (Object.HasStateAuthority)
         {
+            HandlingKey();
+
             HandlePortal();
+
+            if (isInPortal == false)
+            {
+                if (isMovable)//player can move only when movable(when dash, movable is disabled)
+                {
+                    Movement();
+
+                    Jumping();
+
+                    UsingItem();
+                }
+            }
         }
 
         playerRB2D.gravityScale = gravityScale;
@@ -85,14 +121,15 @@ public class PlayerController : NetworkBehaviour
     public override void Render()
     {
         base.Render();
+
         foreach (var change in changes.DetectChanges(this, out var previousBuffer, out var currentBuffer))
         {
             switch (change)
             {
                 case nameof(spriteVisible):
                     var spriteReader = GetPropertyReader<bool>(nameof(spriteVisible));
-                    var (prevSprite, curSprite) = spriteReader.Read(previousBuffer, currentBuffer);
-                    OnSpriteVisibleChagned(prevSprite, curSprite);
+                    var (prevItemSprite, curItemSprite) = spriteReader.Read(previousBuffer, currentBuffer);
+                    OnSpriteVisibleChagned(prevItemSprite, curItemSprite);
                     break;
 
                 case nameof(isTrigger):
@@ -123,22 +160,52 @@ public class PlayerController : NetworkBehaviour
 
     private void Jumping()
     {
-        if (jumpInput == 1 && IsGrounded())
-        {
-            playerRB2D.velocity = new Vector2(playerRB2D.velocity.x, 0);
-            playerRB2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }
+        //if (itemCode != 0)//default jump
+        //{
+            if (jumpInput == 1 && IsGrounded())
+            {
+                playerRB2D.velocity = new Vector2(playerRB2D.velocity.x, 0);
+                playerRB2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
+       //}
+
+        //it was for when we use GetKeyDown() for getting input, but GetKeyDown() function causes key-input ignore because of the difference in update frame between Update function and FixedUpdateNetwork function
+        //else if (itemCode == 0)//have double jump item
+        //{
+        //    if (IsGrounded())
+        //    {
+        //        secondJump = true;
+        //    }
+
+        //    if (jumpInput == 1)
+        //    {
+        //        if (IsGrounded()) { 
+        //            Debug.Log(secondJump);
+        //            playerRB2D.velocity = new Vector2(playerRB2D.velocity.x, 0);
+        //            playerRB2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        //        }
+
+        //        if(!IsGrounded() && secondJump)
+        //        {
+        //            Debug.Log("double jump");
+        //            secondJump = false;
+        //            playerRB2D.velocity = new Vector2(playerRB2D.velocity.x, 0);
+        //            playerRB2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        //        }
+        //    }
+        //}
     }
 
     private void HandlePortal()
     {
-        if(collisionHandler.getPortalValue() != 1 && isInPortal == false) //if player is not on the portal
-        {
-            gravityScale = 9.8f;
-            isTrigger = false;
-            spriteVisible = true;
-            isInPortal = false;
-        }
+        //this causes resetinig gravity and sprite visible into initial value, and item use won't work because of this
+        //if(collisionHandler.getPortalValue() != 1 && isInPortal == false) //if player is not on the portal
+        //{
+        //    gravityScale = 9.8f;
+        //    isTrigger = false;
+        //    spriteVisible = true;
+        //    isInPortal = false;
+        //}
 
         if (collisionHandler.getPortalValue() == 1 && portalInput == 1)//entering portal
         {
@@ -148,7 +215,7 @@ public class PlayerController : NetworkBehaviour
             spriteVisible = false;
         }
 
-        if(isInPortal && portalInput == 2)
+        if(isInPortal && portalInput == 2)//exiting portal when player is in portal
         {
             gravityScale = 9.8f;
             isTrigger = false;
@@ -159,23 +226,100 @@ public class PlayerController : NetworkBehaviour
 
     private void UsingItem()
     {
-        if (useItemInput == 1 /*&& hasItem*/)//if player pressed item use key and having item
+        //for debugging if the reference attached
+        //if(curItem != null)
+        //{
+        //    Debug.Log("player got item");
+        //}
+
+        if (itemCode == 0)//value for double jump
         {
-            //use item
-            //get item's properties if it is dash or double jump
+            if (IsGrounded())
+            {
+                usedJump = false;//when double jumped, it turns into true until player land on ground
+            }
         }
 
-        else if (useItemInput == 2 /*&& hasItem*/)
+        if (itemCode != -1)
         {
+            //make item follows the player position
+            curItem.GetComponentInParent<ItemScript>().SetPos(new Vector3(this.gameObject.transform.position.x + ((float)lastDirection) * 2 / 3, this.gameObject.transform.position.y, this.gameObject.transform.position.z));
+
+            if (useItemInput == 1)
+            {
+                //double jump item
+                if (itemCode == 0 && !IsGrounded())
+                {
+                    if (!usedJump)
+                    {
+                        Debug.Log("double jump");
+                        usedJump = true;
+                        playerRB2D.velocity = new Vector2(playerRB2D.velocity.x, 0);
+                        playerRB2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                    }
+                }
+
+                //dash item
+                if (itemCode == 1 && !usedDash)
+                {
+                    Debug.Log("Use Dash");
+                    usedDash = true;
+                    gravityScale = 0;//set player gravity scale to  so that it looks like dash on air(no falling while dash)
+                    isMovable = false;
+                    playerRB2D.velocity = new Vector2(lastDirection * dashForce, 0);
+                    StartCoroutine("MoveDelay");
+                }
+            }
+
             //drop item
+            else if (useItemInput == 2)
+            {
+                Debug.Log("Drop Item");
+
+                //make item visible and collidable again and make rigidbody2D dynamic to throw it(addforce)
+                curItem.GetComponentInParent<ItemScript>().SetSprite();
+                curItem.GetComponentInParent<ItemScript>().SetCollider();
+                curItem.GetComponentInParent<ItemScript>().SetOffset();
+                curItem.GetComponentInParent<ItemScript>().SetRBDynamic();
+                curItem.GetComponentInParent<ItemScript>().SetFollow();
+
+                //throw the item(directtion is the way player last looked)
+                //curItem.GetComponentInParent<Rigidbody2D>().AddForce(new Vector2(lastDirection * throwPow, 3f), ForceMode2D.Impulse);
+                curItem.GetComponentInParent<Rigidbody2D>().gravityScale = 3f;
+                curItem.GetComponentInParent<Rigidbody2D>().velocity = Vector2.zero;
+                curItem.GetComponentInParent<Rigidbody2D>().velocity = new Vector2(lastDirection * throwPow, 6.5f);
+
+                SetItemCode(-1);
+                SetCurItem(null);
+            }
         }
+    }
+
+    private void HandlingKey()
+    {
+        if(curKey != null)
+        {
+            curKey.GetComponentInParent<KeyScript>().SetPos(new Vector3(this.gameObject.transform.position.x + ((float)-lastDirection) * 2 / 3, this.gameObject.transform.position.y, this.gameObject.transform.position.z));
+        }
+    }
+
+    //set movable when use dash
+    private IEnumerator MoveDelay()
+    {
+        yield return new WaitForSeconds(0.2f);
+        isMovable = true;
+        gravityScale = 9.8f;
+        yield return new WaitForSeconds(0.5f);
+        usedDash = false;
     }
 
     private void representEmotion()
     {
         //show different emotion according to emotionInput value
     }
-    
+
+
+    //for network below
     public void SetInputVector(Vector2 inputVector)
     {
         moveInput = inputVector.x;
@@ -187,14 +331,44 @@ public class PlayerController : NetworkBehaviour
         portalInput = portalPressed;
     }
 
+    public void SetItemCode(int itemNum)
+    {
+        itemCode = itemNum;
+    }
+
+    public void SetCurItem(GameObject item)
+    {
+        curItem = item;
+    }
+
     public void SetUseItem(float useItemPressed)
     {
         useItemInput = useItemPressed;
     }
 
+    public void SetKey(GameObject key)
+    {
+        curKey = key;
+    }
+
     public void SetEmotion(float emotionNum)
     {
         emotionInput = emotionNum;
+    }
+
+    public int GetItemCode()
+    {
+        return itemCode;
+    }
+
+    public GameObject GetKey()
+    {
+        return curKey;
+    }
+
+    public void ChangeMovable()
+    {
+        isMovable = !isMovable;
     }
 
     private void OnSpriteVisibleChagned(NetworkBool oldVal, NetworkBool newVal)

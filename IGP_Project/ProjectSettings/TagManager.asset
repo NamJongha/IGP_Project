@@ -8,7 +8,7 @@ TagManager:
   - Item
   - Portal
   - Enemy
-  - Boundary
+  - Key
   layers:
   - Default
   - TransparentFX
@@ -18,9 +18,9 @@ TagManager:
   - UI
   - Ground
   - Player
-  - 
-  - 
-  - 
+  - Item
+  - CollideOnlyFloor
+  - PlayerTop
   - 
   - 
   - 
