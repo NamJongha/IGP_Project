@@ -8,12 +8,18 @@ public class KeyScript : NetworkBehaviour
     private Vector3 keyPos;
 
     [Networked] private bool isFollowingPlayer { get; set; }
+    [Networked] private bool isActivate { get; set; }
 
     private ChangeDetector changes;
+
+    private SpriteRenderer keySprite;
+    private CapsuleCollider2D keyCollider;
 
     private void Awake()
     {
         this.gameObject.SetActive(true);
+        keySprite = GetComponentInChildren<SpriteRenderer>();
+        keyCollider = GetComponentInChildren<CapsuleCollider2D>();
     }
 
     public override void Spawned()
@@ -23,6 +29,8 @@ public class KeyScript : NetworkBehaviour
         changes = GetChangeDetector(ChangeDetector.Source.SimulationState);
 
         isFollowingPlayer = false;
+
+        isActivate = true;
     }
 
     public override void FixedUpdateNetwork()
@@ -30,6 +38,9 @@ public class KeyScript : NetworkBehaviour
         base.FixedUpdateNetwork();
 
         FollowPlayer();
+
+        keySprite.enabled = isActivate;
+        keyCollider.enabled = isActivate;
     }
 
     public override void Render()
@@ -44,6 +55,12 @@ public class KeyScript : NetworkBehaviour
                     var KeyReader = GetPropertyReader<bool>(nameof(isFollowingPlayer));
                     var (prevKey, curKey) = KeyReader.Read(previousBuffer, currentBuffer);
                     break;
+
+                case nameof(isActivate):
+                    var isActivateReader = GetPropertyReader<bool>(nameof(isActivate));
+                    var (prevActivate, curActivate) = isActivateReader.Read(previousBuffer, currentBuffer);
+                    break;
+
             }
         }
     }
@@ -63,6 +80,11 @@ public class KeyScript : NetworkBehaviour
         isFollowingPlayer = !isFollowingPlayer;
     }
 
+    public void SetActivate()
+    {
+        isActivate = !isActivate;
+    }
+
     public bool GetFollowState()
     {
         return isFollowingPlayer;
@@ -76,5 +98,10 @@ public class KeyScript : NetworkBehaviour
     private void OnIsFollowingPlayerChanged(NetworkBool oldVal, NetworkBool newVal)
     {
         isFollowingPlayer = newVal;
+    }
+
+    private void OnIsActiveChanged(NetworkBool oldVal, NetworkBool newVal)
+    {
+        isActivate = newVal;
     }
 }

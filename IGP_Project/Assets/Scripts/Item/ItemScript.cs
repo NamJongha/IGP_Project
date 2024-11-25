@@ -108,7 +108,6 @@ public class ItemScript : NetworkBehaviour
         if (_isFollowingPlayer)
         {
             transform.position = new Vector3(itemPos.x, itemPos.y, itemPos.z);
-            Debug.Log(itemPos);
         }
         else return;
     }
