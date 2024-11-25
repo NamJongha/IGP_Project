@@ -13,13 +13,23 @@ public class PortalScript : NetworkBehaviour
     public Sprite lockedSprite_top;
     public Sprite openedSprite_top;
 
+    [Header("Next Scene Name")]
+    [SerializeField] public string sceneName;
+
     [Networked] public bool isPortalLocked { get; set; }
 
     private ChangeDetector changes;
 
     private void Awake()
     {
-        
+        if (GameObject.FindWithTag("Key"))
+        {
+            isPortalLocked = true;
+        }
+        else
+        {
+            isPortalLocked = false;
+        }
     }
 
     public override void FixedUpdateNetwork()
@@ -43,7 +53,14 @@ public class PortalScript : NetworkBehaviour
         base.Spawned();
         changes = GetChangeDetector(ChangeDetector.Source.SimulationState);
 
-        isPortalLocked = true;
+        if (GameObject.FindWithTag("Key"))
+        {
+            isPortalLocked = true;
+        }
+        else
+        {
+            isPortalLocked = false;
+        }
     }
 
     public override void Render()
@@ -60,6 +77,11 @@ public class PortalScript : NetworkBehaviour
                     break;
             }
         }
+    }
+
+    public void MoveToNextStage()
+    {
+        
     }
 
     public void SetLocked()

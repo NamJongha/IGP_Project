@@ -13,6 +13,8 @@ public class NetworkPlayerSpawner : MonoBehaviour, INetworkRunnerCallbacks
 
     PlayerInputHandler localPlayerInputHandler;
 
+    public List<PlayerRef> playerList = new List<PlayerRef>();
+
     void Start()
     {
         
@@ -45,15 +47,22 @@ public class NetworkPlayerSpawner : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
-        if (runner.IsServer) // if we are the server
-        {
-            Debug.Log("Spawn Player");
-            runner.Spawn(playerPrefab, GetRandomSpawnPoint(), Quaternion.identity, player);
-        }
-        else Debug.Log("OnPlayerJoined");
+        //if (runner.IsServer)
+        //{
+        //    Debug.Log("OnPlayerJoined");
+        //    runner.Spawn(playerPrefab, GetRandomSpawnPoint(), Quaternion.identity, player);
+        //}
+        //else return;
     }
     
-    public void OnPlayerLeft(NetworkRunner runner, PlayerRef player) { }
+    public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
+    {
+        Debug.Log("Player has disconnected from server");
+        if (!playerList.Contains(player))
+        {
+            playerList.Remove(player);
+        }
+    }
 
     public void OnInput(NetworkRunner runner, NetworkInput Input)
     {
@@ -70,6 +79,29 @@ public class NetworkPlayerSpawner : MonoBehaviour, INetworkRunnerCallbacks
         }
     }
 
+    public void OnSceneLoadDone(NetworkRunner runner)
+    {
+
+       if (runner.IsServer)
+       {
+            Debug.Log("Scene Load Done");
+
+           //if the stage has spawnpoint, spawn player
+           if (GameObject.FindWithTag("SpawnPoint"))
+           {
+               //if the player object is already spawned, don't spawn new one
+               foreach (var player in runner.ActivePlayers)
+               {
+                   if (!runner.TryGetPlayerObject(player, out _))
+                   {
+                       runner.Spawn(playerPrefab, GetRandomSpawnPoint(), Quaternion.identity, player);
+                   }
+               }
+           }
+           else return;
+       }
+    }
+
     public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input) { }
     public void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason) { }
     public void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason) { }
@@ -79,7 +111,6 @@ public class NetworkPlayerSpawner : MonoBehaviour, INetworkRunnerCallbacks
     public void OnSessionListUpdated(NetworkRunner runner, List<SessionInfo> sessionList) { }
     public void OnCustomAuthenticationResponse(NetworkRunner runner, Dictionary<string, object> data) { }
     public void OnHostMigration(NetworkRunner runner, HostMigrationToken hostMigrationToken) { }
-    public void OnSceneLoadDone(NetworkRunner runner) { }
     public void OnSceneLoadStart(NetworkRunner runner) { }
     public void OnObjectExitAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player) { }
     public void OnObjectEnterAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player) { }

@@ -24,7 +24,7 @@ public class PlayerController : NetworkBehaviour
     float useItemInput = 0;
     float emotionInput = 0;
 
-    private bool isInPortal = false;
+    [Networked] public bool isInPortal { get; set; }
 
     //variables for key
     private int itemCode = -1; //None: -1, double jump: 0, dash: 1, weapon: 2
@@ -96,7 +96,6 @@ public class PlayerController : NetworkBehaviour
 
         if (Object.HasStateAuthority)
         {
-            HandlingKey();
 
             HandlePortal();
 
@@ -109,6 +108,8 @@ public class PlayerController : NetworkBehaviour
                     Jumping();
 
                     UsingItem();
+
+                    HandlingKey();
                 }
             }
         }
@@ -142,6 +143,12 @@ public class PlayerController : NetworkBehaviour
                     var gravityReader = GetPropertyReader<float>(nameof(gravityScale));
                     var (prevGravity, curGravity) = gravityReader.Read(previousBuffer, currentBuffer);
                     OnGravityScaleChanged(prevGravity, curGravity);
+                    break;
+
+                case nameof(OnInPortalChanged):
+                    var inPortalReader = GetPropertyReader<bool>(nameof(OnInPortalChanged));
+                    var (prevInPortal, curInPortal) = inPortalReader.Read(previousBuffer, currentBuffer);
+                    OnInPortalChanged(prevInPortal, curInPortal);
                     break;
             }
         }
@@ -198,15 +205,6 @@ public class PlayerController : NetworkBehaviour
 
     private void HandlePortal()
     {
-        //this causes resetinig gravity and sprite visible into initial value, and item use won't work because of this
-        //if(collisionHandler.getPortalValue() != 1 && isInPortal == false) //if player is not on the portal
-        //{
-        //    gravityScale = 9.8f;
-        //    isTrigger = false;
-        //    spriteVisible = true;
-        //    isInPortal = false;
-        //}
-
         if (collisionHandler.getPortalValue() == 1 && portalInput == 1)//entering portal
         {
             isInPortal = true;
@@ -384,5 +382,10 @@ public class PlayerController : NetworkBehaviour
     private void OnIsTriggerChanged(NetworkBool oldVal, NetworkBool newVal)
     {
         playerCollider.isTrigger = newVal;
+    }
+
+    private void OnInPortalChanged(NetworkBool oldVal, NetworkBool newVal)
+    {
+        isInPortal = newVal;
     }
 }
