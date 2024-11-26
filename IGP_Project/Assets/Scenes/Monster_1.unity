@@ -306,6 +306,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Slime (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1284813104508523011, guid: 9f7167d42018db248ad7497cd81c6e33, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4857312756756413910, guid: 9f7167d42018db248ad7497cd81c6e33, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4857312756756413910, guid: 9f7167d42018db248ad7497cd81c6e33, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4857312756756413910, guid: 9f7167d42018db248ad7497cd81c6e33, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4857312756756413910, guid: 9f7167d42018db248ad7497cd81c6e33, type: 3}
       propertyPath: m_LocalPosition.x
       value: -28.298227
@@ -345,6 +361,10 @@ PrefabInstance:
     - target: {fileID: 4857312756756413910, guid: 9f7167d42018db248ad7497cd81c6e33, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4857312756756413910, guid: 9f7167d42018db248ad7497cd81c6e33, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -404,6 +424,18 @@ PrefabInstance:
     - target: {fileID: 727242077613032475, guid: 3aa224a1b04cfb74a99c2d7946e5097b, type: 3}
       propertyPath: m_Name
       value: Enemy_Snake
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521997757682624045, guid: 3aa224a1b04cfb74a99c2d7946e5097b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521997757682624045, guid: 3aa224a1b04cfb74a99c2d7946e5097b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521997757682624045, guid: 3aa224a1b04cfb74a99c2d7946e5097b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4521997757682624045, guid: 3aa224a1b04cfb74a99c2d7946e5097b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -473,15 +505,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4857312756756413910, guid: 9f7167d42018db248ad7497cd81c6e33, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4857312756756413910, guid: 9f7167d42018db248ad7497cd81c6e33, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4857312756756413910, guid: 9f7167d42018db248ad7497cd81c6e33, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4857312756756413910, guid: 9f7167d42018db248ad7497cd81c6e33, type: 3}
       propertyPath: m_LocalPosition.x
@@ -585,6 +617,18 @@ PrefabInstance:
     - target: {fileID: 727242077613032475, guid: 3aa224a1b04cfb74a99c2d7946e5097b, type: 3}
       propertyPath: m_Name
       value: Enemy_Snake (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521997757682624045, guid: 3aa224a1b04cfb74a99c2d7946e5097b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521997757682624045, guid: 3aa224a1b04cfb74a99c2d7946e5097b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521997757682624045, guid: 3aa224a1b04cfb74a99c2d7946e5097b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4521997757682624045, guid: 3aa224a1b04cfb74a99c2d7946e5097b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6655,6 +6699,18 @@ PrefabInstance:
       value: Enemy_Slime (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4857312756756413910, guid: 9f7167d42018db248ad7497cd81c6e33, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4857312756756413910, guid: 9f7167d42018db248ad7497cd81c6e33, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4857312756756413910, guid: 9f7167d42018db248ad7497cd81c6e33, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4857312756756413910, guid: 9f7167d42018db248ad7497cd81c6e33, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.933483
       objectReference: {fileID: 0}
@@ -6693,6 +6749,10 @@ PrefabInstance:
     - target: {fileID: 4857312756756413910, guid: 9f7167d42018db248ad7497cd81c6e33, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4857312756756413910, guid: 9f7167d42018db248ad7497cd81c6e33, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6753,6 +6813,8 @@ GameObject:
   - component: {fileID: 1406720691}
   - component: {fileID: 1406720690}
   - component: {fileID: 1406720693}
+  - component: {fileID: 1406720695}
+  - component: {fileID: 1406720694}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6879,6 +6941,39 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1406720694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406720689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 3461440506
+  ObjectInterest: 1
+  Flags: 1
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 1406720695}
+--- !u!114 &1406720695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406720689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6177d105ef65f2e48b737002b5f43518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  smoothSpeed: 0.125
+  offset: {x: 2, y: 1, z: 0}
 --- !u!1 &1587023910
 GameObject:
   m_ObjectHideFlags: 0
