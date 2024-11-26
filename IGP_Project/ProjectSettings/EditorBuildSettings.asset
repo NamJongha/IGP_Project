@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/LobbyScene.unity
     guid: be47cca3f5feddd4b8e38220c646a111
   - enabled: 1
-    path: Assets/Scenes/BasicScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/SelectScene.unity
+    guid: 109968acf4690854381d2afb6db5cfed
   - enabled: 1
     path: Assets/Scenes/Monster_1.unity
     guid: 29c87dde2560b224db765b10888c8e43
+  - enabled: 1
+    path: Assets/Scenes/BasicScene.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects: {}
