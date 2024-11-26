@@ -29,6 +29,7 @@ public class PlayerInputHandler : MonoBehaviour
         //inputVector.x = Input.GetAxisRaw("Horizontal");
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            Debug.Log("PressedLeft");
             inputVector.x = -1;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
