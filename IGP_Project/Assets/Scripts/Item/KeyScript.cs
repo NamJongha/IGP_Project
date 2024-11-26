@@ -11,6 +11,7 @@ public class KeyScript : NetworkBehaviour
 
     [Networked] private bool isFollowingPlayer { get; set; }
     [Networked] public bool isActivate { get; set; }
+    [Networked] private Vector3 NetworkedScale { get; set; }
 
     private ChangeDetector changes;
 
@@ -66,6 +67,8 @@ public class KeyScript : NetworkBehaviour
                     break;
 
             }
+
+            transform.localScale = NetworkedScale;
         }
     }
 
@@ -74,7 +77,8 @@ public class KeyScript : NetworkBehaviour
         if (isFollowingPlayer)
         {
             transform.position = new Vector3(keyPos.x, keyPos.y, keyPos.z);
-            transform.localScale = new Vector3(keyLastDirection * keyDir.x, keyDir.y, keyDir.z);
+            NetworkedScale = new Vector3(keyLastDirection * keyDir.x, keyDir.y, keyDir.z);
+            transform.localScale = NetworkedScale;
         }
         else return;
     }
