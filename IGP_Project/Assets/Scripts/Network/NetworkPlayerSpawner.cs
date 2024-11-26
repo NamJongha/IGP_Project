@@ -47,12 +47,12 @@ public class NetworkPlayerSpawner : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
-        if (runner.IsServer)
-        {
-            Debug.Log(player.PlayerId + "Player Joined");
-            //runner.Spawn(playerPrefab, GetRandomSpawnPoint(), Quaternion.identity, player);
-        }
-        else return;
+        //if (runner.IsServer)
+        //{
+        //    Debug.Log("OnPlayerJoined");
+        //    runner.Spawn(playerPrefab, GetRandomSpawnPoint(), Quaternion.identity, player);
+        //}
+        //else return;
     }
     
     public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
@@ -92,26 +92,10 @@ public class NetworkPlayerSpawner : MonoBehaviour, INetworkRunnerCallbacks
                //if the player object is already spawned, don't spawn new one
                foreach (var player in runner.ActivePlayers)
                {
-                    NetworkPlayer playerNO;
-                    if (!runner.TryGetPlayerObject(player, out _))
-                    {
-                        playerNO = runner.Spawn(playerPrefab, GetRandomSpawnPoint(), Quaternion.identity, player);
-                        switch (player.PlayerId)
-                        {
-                            case 1:
-                                playerNO.gameObject.GetComponent<PlayerController>().SetBodyColor("Blue");
-                                break;
-                            case 2:
-                                playerNO.gameObject.GetComponent<PlayerController>().SetBodyColor("Green");
-                                break;
-                            case 3:
-                                playerNO.gameObject.GetComponent<PlayerController>().SetBodyColor("Pink");
-                                break;
-                            case 4:
-                                playerNO.gameObject.GetComponent<PlayerController>().SetBodyColor("Yellow");
-                                break;
-                        }
-                    }
+                   if (!runner.TryGetPlayerObject(player, out _))
+                   {
+                       runner.Spawn(playerPrefab, GetRandomSpawnPoint(), Quaternion.identity, player);
+                   }
                }
            }
            else return;

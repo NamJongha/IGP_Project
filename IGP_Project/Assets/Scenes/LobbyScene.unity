@@ -1204,12 +1204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04c549a83e7e7a64983500675764e7d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BodyColor1: {fileID: 21300000, guid: 601118ceed1e44f49af29414798a3507, type: 3}
-  BodyColor2: {fileID: 21300000, guid: 8e6a7ef266091ca468471452b398e145, type: 3}
-  BodyColor3: {fileID: 21300000, guid: 8c98d52e48391bd4d910291b5d003274, type: 3}
-  BodyColor4: {fileID: 21300000, guid: 7cb362f88ca39614ea066f9ea8a90d20, type: 3}
   playerPrefab: {fileID: 5440701206813843124, guid: 3e951011099616740b5f08e10132026d, type: 3}
-  playerList: []
 --- !u!114 &1622656662
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,19 +4,9 @@ using UnityEngine;
 using Fusion;
 using System;
 using UnityEngine.UIElements;
-using Fusion.Addons.Physics;
 
 public class PlayerController : NetworkBehaviour
 {
-    [Header("Player Colors")]
-    [SerializeField] private Sprite BodyColor1;
-    [SerializeField] private Sprite BodyColor2;
-    [SerializeField] private Sprite BodyColor3;
-    [SerializeField] private Sprite BodyColor4;
-
-    private string lastBodyColor;
-    [Networked] private string bodyColor { get; set; }
-
     [Header("Player Settings")]
     public float moveSpeed = 3f;
     public float jumpForce = 6.5f;
@@ -86,19 +76,11 @@ public class PlayerController : NetworkBehaviour
         itemCode = -1;
         isMovable = true;
         lastDirection = 0;
-
-        SetBodySprite();
     }
 
     //clinets get input data from host
     public override void FixedUpdateNetwork()
     {
-        if(bodyColor != lastBodyColor)
-        {
-            lastBodyColor = bodyColor;
-            SetBodySprite();
-        }
-
         if(GetInput(out NetworkInputData data))
         {
             moveInput = data.direction.x;
@@ -114,6 +96,7 @@ public class PlayerController : NetworkBehaviour
 
         if (Object.HasStateAuthority)
         {
+
             HandlePortal();
 
             if (isInPortal == false)
@@ -328,31 +311,6 @@ public class PlayerController : NetworkBehaviour
         //show different emotion according to emotionInput value
     }
 
-
-    
-    public void SetBodySprite()
-    {
-        switch (bodyColor)
-        {
-            case "Blue":
-                playerSprite.sprite = BodyColor1;
-                break;
-            case "Green":
-                playerSprite.sprite = BodyColor2;
-                break;
-            case "Pink":
-                playerSprite.sprite = BodyColor3;
-                break;
-            case "Yellow":
-                playerSprite.sprite = BodyColor4;
-                break;
-        }
-    }
-
-    public void SetBodyColor(string color)
-    {
-        bodyColor = color;
-    }
 
     //for network below
     public void SetInputVector(Vector2 inputVector)
