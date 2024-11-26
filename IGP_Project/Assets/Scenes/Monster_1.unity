@@ -451,6 +451,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7579193645178625290, guid: 878a6670f35cfd942945ca38a77a7d11, type: 3}
+      propertyPath: _isActivate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4945897853991347829, guid: 878a6670f35cfd942945ca38a77a7d11, type: 3}
       propertyPath: SortKey
       value: 2985325682
@@ -3284,7 +3288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3290279619779412227, guid: 131006aae3b91394bae305598882c859, type: 3}
       propertyPath: sceneName
-      value: BasicScene
+      value: SelectScene
       objectReference: {fileID: 0}
     - target: {fileID: 3290279619779412227, guid: 131006aae3b91394bae305598882c859, type: 3}
       propertyPath: _isPortalLocked

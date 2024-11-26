@@ -136,7 +136,9 @@ public class NetworkPortalHandler : MonoBehaviour
         if (allInPortal)
         {
             Debug.Log("load new Scene");
+            allInPortal = false;
             runner.LoadScene(nextScene);
+            
         }
     }
 }

@@ -39,7 +39,7 @@ public class PlayerCollisionHandler : MonoBehaviour
                 {
                     //unlock the portal with key. Key will be disappeared after using it.
                     collision.gameObject.GetComponentInParent<PortalScript>().SetLocked();
-                    this.gameObject.GetComponent<PlayerController>().GetKey().transform.parent.gameObject.GetComponent<KeyScript>().SetActivate();
+                    this.gameObject.GetComponent<PlayerController>().GetKey().transform.parent.gameObject.GetComponent<KeyScript>().SetActiveState();
                     this.gameObject.GetComponent<PlayerController>().SetKey(null);
                 }
 

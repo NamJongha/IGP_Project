@@ -63,7 +63,7 @@ public class NetworkRunnerHandler : MonoBehaviour
         {
             GameMode = gameMode,
             Address = address,
-            Scene = SceneRef.FromIndex(2),
+            Scene = SceneRef.FromIndex(1),
             SessionName = roomCode,
             OnGameStarted = initialized,
             SceneManager = sceneObjectProvider
@@ -72,8 +72,8 @@ public class NetworkRunnerHandler : MonoBehaviour
 
     private void OnGameStarted(NetworkRunnerHandler runner)
     {
-        Debug.Log("GameStart");
-        SceneManager.LoadScene("Monster_1");
+        //Debug.Log("GameStart");
+        //SceneManager.LoadScene("Monster_1");
     }
 }
 

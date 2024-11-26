@@ -22,30 +22,20 @@ public class PortalScript : NetworkBehaviour
 
     private void Awake()
     {
-        if (GameObject.FindWithTag("Key"))
-        {
-            isPortalLocked = true;
-        }
-        else
-        {
-            isPortalLocked = false;
-        }
+        //if (GameObject.FindWithTag("Key"))
+        //{
+        //    isPortalLocked = true;
+        //}
+        //else
+        //{
+        //    isPortalLocked = false;
+        //}
     }
 
     public override void FixedUpdateNetwork()
     {
         base.FixedUpdateNetwork();
 
-        if(isPortalLocked)
-        {
-            midSprite.sprite = lockedSprite_mid;
-            topSprite.sprite = lockedSprite_top;
-        }
-        else
-        {
-            midSprite.sprite = openedSprite_mid;
-            topSprite.sprite = openedSprite_top;
-        }
     }
 
     public override void Spawned()
@@ -53,13 +43,16 @@ public class PortalScript : NetworkBehaviour
         base.Spawned();
         changes = GetChangeDetector(ChangeDetector.Source.SimulationState);
 
-        if (GameObject.FindWithTag("Key"))
+        if (Runner.IsServer)
         {
-            isPortalLocked = true;
-        }
-        else
-        {
-            isPortalLocked = false;
+            if (GameObject.FindWithTag("Key"))
+            {
+                isPortalLocked = true;
+            }
+            else
+            {
+                isPortalLocked = false;
+            }
         }
     }
 
@@ -76,6 +69,17 @@ public class PortalScript : NetworkBehaviour
                     var (prevLocked, curLocked) = lockedReader.Read(previousBuffer, currentBuffer);
                     break;
             }
+        }
+
+        if (isPortalLocked)
+        {
+            midSprite.sprite = lockedSprite_mid;
+            topSprite.sprite = lockedSprite_top;
+        }
+        else
+        {
+            midSprite.sprite = openedSprite_mid;
+            topSprite.sprite = openedSprite_top;
         }
     }
 

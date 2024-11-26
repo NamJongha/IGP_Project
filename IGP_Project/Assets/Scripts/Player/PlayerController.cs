@@ -91,7 +91,7 @@ public class PlayerController : NetworkBehaviour
 
         if(moveInput != 0)
         {
-            lastDirection = moveInput;
+            if(isMovable) lastDirection = moveInput;
         }
 
         if (Object.HasStateAuthority)
@@ -106,11 +106,10 @@ public class PlayerController : NetworkBehaviour
                     Movement();
 
                     Jumping();
-
-                    UsingItem();
-
-                    HandlingKey();
                 }
+                UsingItem();
+
+                HandlingKey();
             }
         }
 
@@ -224,12 +223,6 @@ public class PlayerController : NetworkBehaviour
 
     private void UsingItem()
     {
-        //for debugging if the reference attached
-        //if(curItem != null)
-        //{
-        //    Debug.Log("player got item");
-        //}
-
         if (itemCode == 0)//value for double jump
         {
             if (IsGrounded())
@@ -243,52 +236,54 @@ public class PlayerController : NetworkBehaviour
             //make item follows the player position
             curItem.GetComponentInParent<ItemScript>().SetPos(new Vector3(this.gameObject.transform.position.x + ((float)lastDirection) * 2 / 3, this.gameObject.transform.position.y, this.gameObject.transform.position.z));
 
-            if (useItemInput == 1)
-            {
-                //double jump item
-                if (itemCode == 0 && !IsGrounded())
+            if (isMovable) {
+                if (useItemInput == 1)
                 {
-                    if (!usedJump)
+                    //double jump item
+                    if (itemCode == 0 && !IsGrounded())
                     {
-                        Debug.Log("double jump");
-                        usedJump = true;
-                        playerRB2D.velocity = new Vector2(playerRB2D.velocity.x, 0);
-                        playerRB2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                        if (!usedJump)
+                        {
+                            Debug.Log("double jump");
+                            usedJump = true;
+                            playerRB2D.velocity = new Vector2(playerRB2D.velocity.x, 0);
+                            playerRB2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                        }
+                    }
+
+                    //dash item
+                    if (itemCode == 1 && !usedDash)
+                    {
+                        Debug.Log("Use Dash");
+                        usedDash = true;
+                        gravityScale = 0;//set player gravity scale to  so that it looks like dash on air(no falling while dash)
+                        isMovable = false;
+                        playerRB2D.velocity = new Vector2(lastDirection * dashForce, 0);
+                        StartCoroutine("MoveDelay");
                     }
                 }
 
-                //dash item
-                if (itemCode == 1 && !usedDash)
+                //drop item
+                else if (useItemInput == 2)
                 {
-                    Debug.Log("Use Dash");
-                    usedDash = true;
-                    gravityScale = 0;//set player gravity scale to  so that it looks like dash on air(no falling while dash)
-                    isMovable = false;
-                    playerRB2D.velocity = new Vector2(lastDirection * dashForce, 0);
-                    StartCoroutine("MoveDelay");
+                    Debug.Log("Drop Item");
+
+                    //make item visible and collidable again and make rigidbody2D dynamic to throw it(addforce)
+                    curItem.GetComponentInParent<ItemScript>().SetSprite();
+                    curItem.GetComponentInParent<ItemScript>().SetCollider();
+                    curItem.GetComponentInParent<ItemScript>().SetOffset();
+                    curItem.GetComponentInParent<ItemScript>().SetRBDynamic();
+                    curItem.GetComponentInParent<ItemScript>().SetFollow();
+
+                    //throw the item(directtion is the way player last looked)
+                    //curItem.GetComponentInParent<Rigidbody2D>().AddForce(new Vector2(lastDirection * throwPow, 3f), ForceMode2D.Impulse);
+                    curItem.GetComponentInParent<Rigidbody2D>().gravityScale = 3f;
+                    curItem.GetComponentInParent<Rigidbody2D>().velocity = Vector2.zero;
+                    curItem.GetComponentInParent<Rigidbody2D>().velocity = new Vector2(lastDirection * throwPow, 6.5f);
+
+                    SetItemCode(-1);
+                    SetCurItem(null);
                 }
-            }
-
-            //drop item
-            else if (useItemInput == 2)
-            {
-                Debug.Log("Drop Item");
-
-                //make item visible and collidable again and make rigidbody2D dynamic to throw it(addforce)
-                curItem.GetComponentInParent<ItemScript>().SetSprite();
-                curItem.GetComponentInParent<ItemScript>().SetCollider();
-                curItem.GetComponentInParent<ItemScript>().SetOffset();
-                curItem.GetComponentInParent<ItemScript>().SetRBDynamic();
-                curItem.GetComponentInParent<ItemScript>().SetFollow();
-
-                //throw the item(directtion is the way player last looked)
-                //curItem.GetComponentInParent<Rigidbody2D>().AddForce(new Vector2(lastDirection * throwPow, 3f), ForceMode2D.Impulse);
-                curItem.GetComponentInParent<Rigidbody2D>().gravityScale = 3f;
-                curItem.GetComponentInParent<Rigidbody2D>().velocity = Vector2.zero;
-                curItem.GetComponentInParent<Rigidbody2D>().velocity = new Vector2(lastDirection * throwPow, 6.5f);
-
-                SetItemCode(-1);
-                SetCurItem(null);
             }
         }
     }
@@ -297,7 +292,7 @@ public class PlayerController : NetworkBehaviour
     {
         if(curKey != null)
         {
-            curKey.GetComponentInParent<KeyScript>().SetPos(new Vector3(this.gameObject.transform.position.x + ((float)-lastDirection) * 2 / 3, this.gameObject.transform.position.y, this.gameObject.transform.position.z));
+            curKey.GetComponentInParent<KeyScript>().SetPos(new Vector3(this.gameObject.transform.position.x + ((float)-lastDirection) * 2 / 3, this.gameObject.transform.position.y, this.gameObject.transform.position.z), lastDirection);
         }
     }
 

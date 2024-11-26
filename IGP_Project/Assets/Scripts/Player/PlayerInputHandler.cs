@@ -57,7 +57,6 @@ public class PlayerInputHandler : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             useItemInput = 1;
-            Debug.Log("Pressed a");
         }
 
         if (Input.GetKey(KeyCode.D))

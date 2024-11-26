@@ -6,9 +6,11 @@ using Fusion;
 public class KeyScript : NetworkBehaviour
 {
     private Vector3 keyPos;
+    private Vector3 keyDir;
+    private float keyLastDirection = 1;
 
     [Networked] private bool isFollowingPlayer { get; set; }
-    [Networked] private bool isActivate { get; set; }
+    [Networked] public bool isActivate { get; set; }
 
     private ChangeDetector changes;
 
@@ -17,9 +19,10 @@ public class KeyScript : NetworkBehaviour
 
     private void Awake()
     {
-        this.gameObject.SetActive(true);
         keySprite = GetComponentInChildren<SpriteRenderer>();
         keyCollider = GetComponentInChildren<CapsuleCollider2D>();
+
+        keyDir = transform.localScale;
     }
 
     public override void Spawned()
@@ -31,6 +34,8 @@ public class KeyScript : NetworkBehaviour
         isFollowingPlayer = false;
 
         isActivate = true;
+        keySprite.enabled = true;
+        keyCollider.enabled = true;
     }
 
     public override void FixedUpdateNetwork()
@@ -38,9 +43,6 @@ public class KeyScript : NetworkBehaviour
         base.FixedUpdateNetwork();
 
         FollowPlayer();
-
-        keySprite.enabled = isActivate;
-        keyCollider.enabled = isActivate;
     }
 
     public override void Render()
@@ -54,11 +56,13 @@ public class KeyScript : NetworkBehaviour
                 case nameof(isFollowingPlayer):
                     var KeyReader = GetPropertyReader<bool>(nameof(isFollowingPlayer));
                     var (prevKey, curKey) = KeyReader.Read(previousBuffer, currentBuffer);
+                    OnIsFollowingPlayerChanged(prevKey, curKey);
                     break;
 
                 case nameof(isActivate):
                     var isActivateReader = GetPropertyReader<bool>(nameof(isActivate));
                     var (prevActivate, curActivate) = isActivateReader.Read(previousBuffer, currentBuffer);
+                    OnIsActiveChanged(prevActivate, curActivate);
                     break;
 
             }
@@ -70,6 +74,7 @@ public class KeyScript : NetworkBehaviour
         if (isFollowingPlayer)
         {
             transform.position = new Vector3(keyPos.x, keyPos.y, keyPos.z);
+            transform.localScale = new Vector3(keyLastDirection * keyDir.x, keyDir.y, keyDir.z);
         }
         else return;
     }
@@ -80,7 +85,7 @@ public class KeyScript : NetworkBehaviour
         isFollowingPlayer = !isFollowingPlayer;
     }
 
-    public void SetActivate()
+    public void SetActiveState()
     {
         isActivate = !isActivate;
     }
@@ -90,9 +95,10 @@ public class KeyScript : NetworkBehaviour
         return isFollowingPlayer;
     }
 
-    public void SetPos(Vector3 playerPos)
+    public void SetPos(Vector3 playerPos, float lastDirection)
     {
         keyPos = playerPos;
+        keyLastDirection = lastDirection;
     }
 
     private void OnIsFollowingPlayerChanged(NetworkBool oldVal, NetworkBool newVal)
@@ -102,6 +108,7 @@ public class KeyScript : NetworkBehaviour
 
     private void OnIsActiveChanged(NetworkBool oldVal, NetworkBool newVal)
     {
-        isActivate = newVal;
+        keySprite.enabled = newVal;
+        keyCollider.enabled = newVal;
     }
 }
