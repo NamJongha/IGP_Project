@@ -29,14 +29,10 @@ public class EnemyController : NetworkBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Boundary"))
+        // 레이어가 Boundary인 경우에만 방향을 변경
+        if (LayerMask.LayerToName(collision.gameObject.layer) == "Boundary")
         {
-            // 상태 권한이 있는 경우에만 이동 방향 변경
-            if (HasStateAuthority)
-            {
-                // 방향을 반전시키고 이 변경을 네트워크에 동기화
-                isMovingRight = !isMovingRight;
-            }
+            isMovingRight = !isMovingRight;
         }
     }
 }
