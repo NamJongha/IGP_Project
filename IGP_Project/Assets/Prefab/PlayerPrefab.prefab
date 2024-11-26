@@ -124,6 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19802b3f862b1834ea632a63367c35f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BodyColor1: {fileID: 21300000, guid: 4687cdc964241e44f820a04bc9f218ff, type: 3}
+  BodyColor2: {fileID: 21300000, guid: 290f2ad1221267240b79bed59fee0335, type: 3}
+  BodyColor3: {fileID: 21300000, guid: 3a13ec04be80d0b459f460a7cda65f88, type: 3}
+  BodyColor4: {fileID: 21300000, guid: 5676756643d4ee843a8ef55b74c3871d, type: 3}
   moveSpeed: 6
   jumpForce: 15
   dashForce: 13
