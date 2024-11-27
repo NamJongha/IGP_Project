@@ -15,7 +15,7 @@ public class PlayerController : NetworkBehaviour
     [SerializeField] private Sprite BodyColor4;
 
     private string lastBodyColor;
-    [Networked] private string bodyColor { get; set; }
+    [Networked] public string bodyColor { get; set; }
 
     [Header("Player Settings")]
     public float moveSpeed = 3f;

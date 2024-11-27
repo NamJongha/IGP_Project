@@ -10,6 +10,10 @@ TagManager:
   - Enemy
   - Key
   - Boundary
+  - Blue
+  - Yellow
+  - Pink
+  - Green
   layers:
   - Default
   - TransparentFX
