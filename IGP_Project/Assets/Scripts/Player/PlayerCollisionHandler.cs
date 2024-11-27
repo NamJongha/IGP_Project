@@ -1,23 +1,34 @@
+using Fusion;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using static Unity.Collections.Unicode;
 
 public class PlayerCollisionHandler : MonoBehaviour
 {
     private float onPortal = 0;
-
+    private NetworkRunner runner;
     //if player is on the portal, return 1
     //if not, return 0
     public float getPortalValue()
     {
         return onPortal;
     }
+    private void Start()
+    {
+        runner = FindObjectOfType<NetworkRunner>();
+    }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         //if collided object's tag is enemy
-        //player death
+        if (collision.gameObject.CompareTag("Enemy")) {
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            runner.LoadScene(currentSceneName);
+            //player death
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

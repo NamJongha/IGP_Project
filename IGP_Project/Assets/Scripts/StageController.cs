@@ -42,4 +42,11 @@ public class StageController : MonoBehaviour
             runner.LoadScene("Monster_1");
         }
     }
+    public void Enter_B1()
+    {
+        if (runner.IsServer)
+        {
+            runner.LoadScene("Board_1");
+        }
+    }
 }

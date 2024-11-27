@@ -3,7 +3,7 @@ using Fusion;
 
 public class SlidingBoard : NetworkBehaviour
 {
-    public float slideForce = 2f;
+    public float slideForce = 7f;
 
     private void OnCollisionStay2D(Collision2D collision)
     {

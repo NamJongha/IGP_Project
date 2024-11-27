@@ -8,26 +8,49 @@ public class PlayerBoard : NetworkBehaviour
 
     void Start()
     {
-        // 여기에서 PlayerColor를 초기화할 수 있음
-        // 예: PlayerColor = "Red";
+        PlayerColor = GetComponentInParent<PlayerController>().bodyColor;
     }
 
     // 충돌 인식
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if (!HasStateAuthority)
-            return;
-
-        string layer = LayerMask.LayerToName(collision.gameObject.layer);
-
-        if (layer == "Default" || layer == PlayerColor)
+        if (!collision.gameObject.CompareTag("Untagged") && !collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("밟을 수 있습니다.");
-        }
-        else
-        {
-            Debug.Log("일치하지 않는 색의 발판입니다. 아래로 떨어집니다.");
-            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+            switch (PlayerColor)
+            {
+                case "Blue":
+                    if (!collision.gameObject.CompareTag(PlayerColor))
+                    {
+                        Debug.Log(PlayerColor);
+                        Physics2D.IgnoreCollision(collision.collider, GetComponentInChildren<Collider2D>());
+                        Debug.Log(PlayerColor + " is not same");
+                    }
+                    break;
+                case "Green":
+                    if (!collision.gameObject.CompareTag(PlayerColor))
+                    {
+                        Debug.Log(PlayerColor);
+                        Physics2D.IgnoreCollision(collision.collider, GetComponentInChildren<Collider2D>());
+                        Debug.Log(PlayerColor + " is not same");
+                    }
+                    break;
+                case "Pink":
+                    if (!collision.gameObject.CompareTag(PlayerColor))
+                    {
+                        Debug.Log(PlayerColor);
+                        Physics2D.IgnoreCollision(collision.collider, GetComponentInChildren<Collider2D>());
+                        Debug.Log(PlayerColor + " is not same");
+                    }
+                    break;
+                case "Yellow":
+                    if (!collision.gameObject.CompareTag(PlayerColor))
+                    {
+                        Debug.Log(PlayerColor);
+                        Physics2D.IgnoreCollision(collision.collider, GetComponentInChildren<Collider2D>());
+                        Debug.Log(PlayerColor + " is not same");
+                    }
+                    break;
+            }
         }
     }
 }
