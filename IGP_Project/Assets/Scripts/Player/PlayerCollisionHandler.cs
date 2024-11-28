@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static Unity.Collections.Unicode;
 
 public class PlayerCollisionHandler : MonoBehaviour
 {
@@ -25,9 +24,9 @@ public class PlayerCollisionHandler : MonoBehaviour
     {
         //if collided object's tag is enemy
         if (collision.gameObject.CompareTag("Enemy")) {
+            this.gameObject.GetComponentInParent<PlayerController>().isPlayerDead = true;
             string currentSceneName = SceneManager.GetActiveScene().name;
-            runner.LoadScene(currentSceneName);
-            //player death
+            //runner.LoadScene(currentSceneName);
         }
     }
 

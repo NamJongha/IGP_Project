@@ -15,11 +15,15 @@ public class EnemyController : NetworkBehaviour
 
     private ChangeDetector changes;
 
+    private NetworkGameManager gameManager;
+
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         sr.flipX = true;
+
+        gameManager = GameObject.FindWithTag("GameManager").GetComponent<NetworkGameManager>();
     }
 
     public override void Spawned()
@@ -33,6 +37,15 @@ public class EnemyController : NetworkBehaviour
 
     public override void FixedUpdateNetwork()
     {
+        if (HasStateAuthority)
+        {
+            if (gameManager.GetPlayerDead())
+            {
+                rb2d.velocity = Vector2.zero;
+                return;
+            }
+        }
+
         Vector2 newVelocity = new Vector2(isMovingRight ? moveSpeed : -moveSpeed, rb2d.velocity.y);
         rb2d.velocity = newVelocity;
     }

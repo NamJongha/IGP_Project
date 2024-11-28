@@ -35,6 +35,7 @@ public class PlayerController : NetworkBehaviour
     float emotionInput = 0;
 
     [Networked] public bool isInPortal { get; set; }
+    [Networked] public bool isPlayerDead {  get; set; }
 
     //variables for key
     private int itemCode = -1; //None: -1, double jump: 0, dash: 1, weapon: 2
@@ -48,15 +49,20 @@ public class PlayerController : NetworkBehaviour
     private bool usedJump = false;
     private bool usedDash = false;
 
+    //Network variables for syncing players on network
     [Networked] private bool isTrigger { get; set; }
     [Networked] private float gravityScale { get; set; }
     [Networked] private bool spriteVisible { get; set; }
+    [Networked] private Vector3 facePosition { get; set; }
 
 
     Rigidbody2D playerRB2D;
     PlayerCollisionHandler collisionHandler;
     BoxCollider2D playerCollider;
-    SpriteRenderer playerSprite;
+
+    SpriteRenderer[] playerSprite;
+    SpriteRenderer playerBodySprite;
+    SpriteRenderer playerFaceSprite;
 
     private ChangeDetector changes;
 
@@ -65,7 +71,11 @@ public class PlayerController : NetworkBehaviour
         playerRB2D = GetComponent<Rigidbody2D>();
         collisionHandler = GetComponent<PlayerCollisionHandler>();
         playerCollider = GetComponentInChildren<BoxCollider2D>();
-        playerSprite = GetComponentInChildren<SpriteRenderer>();
+
+        playerSprite = GetComponentsInChildren<SpriteRenderer>();
+        playerBodySprite = playerSprite[0];
+        playerFaceSprite = playerSprite[1];
+    
         curItem = null;
         curKey = null;
     }
@@ -82,7 +92,10 @@ public class PlayerController : NetworkBehaviour
         isTrigger = false;
         spriteVisible = true;
 
+        facePosition = this.gameObject.transform.position;
+
         isInPortal = false;
+        isPlayerDead = false;
         itemCode = -1;
         isMovable = true;
         lastDirection = 0;
@@ -93,6 +106,8 @@ public class PlayerController : NetworkBehaviour
     //clinets get input data from host
     public override void FixedUpdateNetwork()
     {
+        Debug.Log(isPlayerDead);
+
         if(bodyColor != lastBodyColor)
         {
             lastBodyColor = bodyColor;
@@ -112,6 +127,7 @@ public class PlayerController : NetworkBehaviour
             if(isMovable) lastDirection = moveInput;
         }
 
+
         if (Object.HasStateAuthority)
         {
             HandlePortal();
@@ -123,16 +139,24 @@ public class PlayerController : NetworkBehaviour
                     Movement();
 
                     Jumping();
+
+                    SetFaceSprite();
                 }
                 UsingItem();
 
                 HandlingKey();
+
+                if (isPlayerDead)
+                {
+                    playerRB2D.velocity = Vector2.zero;
+                    gravityScale = 0;
+                }
             }
         }
 
         playerRB2D.gravityScale = gravityScale;
         playerCollider.isTrigger = isTrigger;
-        playerSprite.enabled = spriteVisible;
+        playerBodySprite.enabled = spriteVisible;
     }
 
     public override void Render()
@@ -183,40 +207,11 @@ public class PlayerController : NetworkBehaviour
 
     private void Jumping()
     {
-        //if (itemCode != 0)//default jump
-        //{
-            if (jumpInput == 1 && IsGrounded())
-            {
-                playerRB2D.velocity = new Vector2(playerRB2D.velocity.x, 0);
-                playerRB2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            }
-       //}
-
-        //it was for when we use GetKeyDown() for getting input, but GetKeyDown() function causes key-input ignore because of the difference in update frame between Update function and FixedUpdateNetwork function
-        //else if (itemCode == 0)//have double jump item
-        //{
-        //    if (IsGrounded())
-        //    {
-        //        secondJump = true;
-        //    }
-
-        //    if (jumpInput == 1)
-        //    {
-        //        if (IsGrounded()) { 
-        //            Debug.Log(secondJump);
-        //            playerRB2D.velocity = new Vector2(playerRB2D.velocity.x, 0);
-        //            playerRB2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        //        }
-
-        //        if(!IsGrounded() && secondJump)
-        //        {
-        //            Debug.Log("double jump");
-        //            secondJump = false;
-        //            playerRB2D.velocity = new Vector2(playerRB2D.velocity.x, 0);
-        //            playerRB2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        //        }
-        //    }
-        //}
+        if (jumpInput == 1 && IsGrounded())
+        {
+            playerRB2D.velocity = new Vector2(playerRB2D.velocity.x, 0);
+            playerRB2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
     }
 
     private void HandlePortal()
@@ -328,23 +323,27 @@ public class PlayerController : NetworkBehaviour
         //show different emotion according to emotionInput value
     }
 
-
+    public void SetFaceSprite()
+    {
+        facePosition = this.gameObject.transform.position + new Vector3(moveInput * 0.18f, 0, -0.1f);
+        playerFaceSprite.transform.position = facePosition;
+    }
     
     public void SetBodySprite()
     {
         switch (bodyColor)
         {
             case "Blue":
-                playerSprite.sprite = BodyColor1;
+                playerBodySprite.sprite = BodyColor1;
                 break;
             case "Green":
-                playerSprite.sprite = BodyColor2;
+                playerBodySprite.sprite = BodyColor2;
                 break;
             case "Pink":
-                playerSprite.sprite = BodyColor3;
+                playerBodySprite.sprite = BodyColor3;
                 break;
             case "Yellow":
-                playerSprite.sprite = BodyColor4;
+                playerBodySprite.sprite = BodyColor4;
                 break;
         }
     }
@@ -352,6 +351,11 @@ public class PlayerController : NetworkBehaviour
     public void SetBodyColor(string color)
     {
         bodyColor = color;
+    }
+
+    public void SetNotMovable()
+    {
+        isMovable = false;
     }
 
     //for network below
@@ -408,7 +412,8 @@ public class PlayerController : NetworkBehaviour
 
     private void OnSpriteVisibleChagned(NetworkBool oldVal, NetworkBool newVal)
     {
-        playerSprite.enabled = newVal;
+        playerBodySprite.enabled = newVal;
+        playerFaceSprite.enabled = newVal;
     }
 
     private void OnGravityScaleChanged(float oldVal, float newVal)
