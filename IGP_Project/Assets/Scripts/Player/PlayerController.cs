@@ -49,16 +49,19 @@ public class PlayerController : NetworkBehaviour
     private bool usedJump = false;
     private bool usedDash = false;
 
+    //Current camera width Position
+    float camwidthPosition;
+
     //Network variables for syncing players on network
     [Networked] private bool isTrigger { get; set; }
     [Networked] private float gravityScale { get; set; }
     [Networked] private bool spriteVisible { get; set; }
     [Networked] private Vector3 facePosition { get; set; }
 
-
     Rigidbody2D playerRB2D;
     PlayerCollisionHandler collisionHandler;
     BoxCollider2D playerCollider;
+    CameraFollow cameraSize;
 
     SpriteRenderer[] playerSprite;
     SpriteRenderer playerBodySprite;
@@ -71,11 +74,12 @@ public class PlayerController : NetworkBehaviour
         playerRB2D = GetComponent<Rigidbody2D>();
         collisionHandler = GetComponent<PlayerCollisionHandler>();
         playerCollider = GetComponentInChildren<BoxCollider2D>();
+        cameraSize = GameObject.FindGameObjectWithTag("ViewPosition").GetComponent<CameraFollow>();
 
         playerSprite = GetComponentsInChildren<SpriteRenderer>();
         playerBodySprite = playerSprite[0];
         playerFaceSprite = playerSprite[1];
-    
+
         curItem = null;
         curKey = null;
     }
@@ -106,7 +110,7 @@ public class PlayerController : NetworkBehaviour
     //clinets get input data from host
     public override void FixedUpdateNetwork()
     {
-        Debug.Log(isPlayerDead);
+        //Debug.Log(isPlayerDead);
 
         if(bodyColor != lastBodyColor)
         {
@@ -145,6 +149,8 @@ public class PlayerController : NetworkBehaviour
                 UsingItem();
 
                 HandlingKey();
+                
+                representEmotion();
 
                 if (isPlayerDead)
                 {
@@ -202,7 +208,15 @@ public class PlayerController : NetworkBehaviour
 
     private void Movement()
     {
-        playerRB2D.velocity = new Vector2(moveInput * moveSpeed, playerRB2D.velocity.y);
+        if (!collisionHandler.getOnBoundray())
+        {
+            playerRB2D.velocity = new Vector2(moveInput * moveSpeed, playerRB2D.velocity.y);
+        }
+        else
+        {
+            playerRB2D.velocity = Vector2.zero;
+            MoveRestriction();
+        }
     }
 
     private void Jumping()
@@ -318,6 +332,12 @@ public class PlayerController : NetworkBehaviour
         usedDash = false;
     }
 
+    private void MoveRestriction()
+    {
+        camwidthPosition = cameraSize.GetCameraWidthPosition();
+        this.transform.position = new Vector3(Mathf.Clamp(transform.position.x, playerBodySprite.bounds.size.x * 0.4f - camwidthPosition, camwidthPosition - playerBodySprite.bounds.size.x * 0.6f),
+                                                              transform.position.y);
+    }
     private void representEmotion()
     {
         //show different emotion according to emotionInput value
@@ -390,11 +410,10 @@ public class PlayerController : NetworkBehaviour
         curKey = key;
     }
 
-    public void SetEmotion(float emotionNum)
+    public void SetEmotion(int emotionNum)
     {
         emotionInput = emotionNum;
     }
-
     public int GetItemCode()
     {
         return itemCode;

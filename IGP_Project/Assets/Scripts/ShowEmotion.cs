@@ -9,32 +9,85 @@ public class ShowEmotion : NetworkBehaviour
     public Sprite Angry;
     public Sprite Sorry;
 
-    [Networked]
+    private float emotionInput = 0;
+
+    [Networked, OnChangedRender(nameof(OnEmotionIndexChanged))]
     public int activeEmotionIndex { get; set; } = -1; // -1 means the emotion is empty
     private bool isEmotionActive = false;
 
+    private ChangeDetector change;
+
+    public override void Spawned()
+    {
+        base.Spawned();
+
+        change = GetChangeDetector(ChangeDetector.Source.SimulationState);
+
+        activeEmotionIndex = -1;
+
+    }
+
     private void Update()
     {
-        if (!HasStateAuthority)
-            return;
+        //if (!HasStateAuthority)
+        //    return;
+        //
+        //if (!isEmotionActive)
+        //{
+        //    if (Input.GetKeyDown(KeyCode.Alpha1))
+        //    {
+        //        ChangeSprite(0); // Good
+        //    }
+        //
+        //    if (Input.GetKeyDown(KeyCode.Alpha2))
+        //    {
+        //        ChangeSprite(1); // Angry
+        //    }
+        //
+        //    if (Input.GetKeyDown(KeyCode.Alpha3))
+        //    {
+        //        ChangeSprite(2); // Sorry
+        //    }
+        //}
+        //
+        //UpdateSprite();
+    }
 
+    public override void FixedUpdateNetwork()
+    {
+        base.FixedUpdateNetwork();
+
+        if (GetInput(out NetworkInputData data))
+        {
+            emotionInput = data.emotion;
+        }
+
+        if (HasStateAuthority)
+        {
+            representEmotion();
+        }
+    }
+
+    private void representEmotion()
+    {
         if (!isEmotionActive)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (emotionInput == 1)
             {
-                ChangeSprite(0); // Good
+                ChangeSprite(0);
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha2))
+            if (emotionInput == 2)
             {
-                ChangeSprite(1); // Angry
+                ChangeSprite(1);
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha3))
+            if (emotionInput == 3)
             {
-                ChangeSprite(2); // Sorry
+                ChangeSprite(2);
             }
         }
+
 
         UpdateSprite();
     }
@@ -70,5 +123,15 @@ public class ShowEmotion : NetworkBehaviour
                 spriteRenderer.sprite = null;
                 break;
         }
+    }
+
+    public void SetEmotion(float emotionNum)
+    {
+        emotionInput = emotionNum;
+    }
+
+    public void OnEmotionIndexChanged()
+    {
+        UpdateSprite();
     }
 }

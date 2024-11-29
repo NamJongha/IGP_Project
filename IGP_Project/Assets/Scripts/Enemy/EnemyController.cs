@@ -17,11 +17,15 @@ public class EnemyController : NetworkBehaviour
 
     private NetworkGameManager gameManager;
 
+    private Animator enemyAnimator;
+
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
+        sr = GetComponentInChildren<SpriteRenderer>();
         sr.flipX = true;
+
+        enemyAnimator = GetComponentInChildren<Animator>();
 
         gameManager = GameObject.FindWithTag("GameManager").GetComponent<NetworkGameManager>();
     }
@@ -33,14 +37,21 @@ public class EnemyController : NetworkBehaviour
         changes = GetChangeDetector(ChangeDetector.Source.SimulationState);
 
         sr.flipX = true;
+
+        enemyAnimator.SetBool("isPlayerDead", false);
     }
 
     public override void FixedUpdateNetwork()
     {
+
+        Debug.Log(gameManager.GetPlayerDead());
         if (HasStateAuthority)
         {
+            enemyAnimator.SetBool("isPlayerDead", false);
+
             if (gameManager.GetPlayerDead())
             {
+                enemyAnimator.SetBool("isPlayerDead", true);
                 rb2d.velocity = Vector2.zero;
                 return;
             }

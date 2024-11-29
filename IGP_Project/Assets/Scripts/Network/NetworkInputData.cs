@@ -9,5 +9,5 @@ public struct NetworkInputData : INetworkInput
     public Vector2 direction;
     public float enterPortal;
     public float useItem;
-    public float emotion;
+    public int emotion;
 }

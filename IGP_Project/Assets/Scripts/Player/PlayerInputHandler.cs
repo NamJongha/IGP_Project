@@ -10,7 +10,7 @@ public class PlayerInputHandler : MonoBehaviour
     Vector2 inputVector = Vector2.zero;
     float portalInput = 0;
     float useItemInput = 0;
-    float emotionInput = 0;
+    int emotionInput = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,7 @@ public class PlayerInputHandler : MonoBehaviour
         //inputVector.x = Input.GetAxisRaw("Horizontal");
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            Debug.Log("PressedLeft");
+            //Debug.Log("PressedLeft");
             inputVector.x = -1;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
@@ -64,9 +64,20 @@ public class PlayerInputHandler : MonoBehaviour
             useItemInput = 2;
         }
 
+        //show emotion
         if (Input.GetKey(KeyCode.Alpha1))
         {
             emotionInput = 1;
+        }
+
+        if (Input.GetKey(KeyCode.Alpha2))
+        {
+            emotionInput = 2;
+        }
+
+        if (Input.GetKey(KeyCode.Alpha3))
+        {
+            emotionInput = 3;
         }
 
         playerController.SetInputVector(inputVector);
