@@ -9,11 +9,16 @@ public class PlayerCollisionHandler : MonoBehaviour
 {
     private float onPortal = 0;
     private NetworkRunner runner;
+    private bool OnBoundary = false;
     //if player is on the portal, return 1
     //if not, return 0
     public float getPortalValue()
     {
         return onPortal;
+    }
+    public bool getOnBoundray()
+    {
+        return OnBoundary;
     }
     private void Start()
     {
@@ -93,6 +98,11 @@ public class PlayerCollisionHandler : MonoBehaviour
             this.gameObject.GetComponent<PlayerController>().SetKey(collision.gameObject);
             collision.gameObject.GetComponentInParent<KeyScript>().SetFollow();
         }
+
+        if(collision.gameObject.tag == "MoveBoundary")
+        {
+            OnBoundary = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -100,6 +110,11 @@ public class PlayerCollisionHandler : MonoBehaviour
         if (collision.gameObject.tag == "Portal")
         {
             onPortal = 0;
+        }
+
+        if (collision.gameObject.tag == "MoveBoundary")
+        {
+            OnBoundary = false;
         }
     }
 }

@@ -4,10 +4,15 @@ using Fusion;
 public class CameraFollow : NetworkBehaviour
 {
     public string playerTag = "Player";
-    public float smoothSpeed = 0.125f;
+    public float smoothSpeed = 0f;
     public Vector3 offset;
 
-    [Networked] private Vector3 syncedCameraPostion { get; set; }
+    [Networked] private Vector3 syncedCameraPosition { get; set; }
+
+    public float GetCameraWidthPosition()
+    {
+        return syncedCameraPosition.x + Camera.main.orthographicSize * Screen.width / Screen.height;
+    }
 
     public override void FixedUpdateNetwork()
     {
@@ -39,9 +44,9 @@ public class CameraFollow : NetworkBehaviour
             //Vector3 smoothedPosition = Vector3.Lerp(transform.position, targetPosition, smoothSpeed);
             //transform.position = smoothedPosition;
 
-            syncedCameraPostion = Vector3.Lerp(transform.position, targetPosition, smoothSpeed);
+            syncedCameraPosition = Vector3.Lerp(transform.position, targetPosition, smoothSpeed);
 
-            transform.position = syncedCameraPostion;
+            transform.position = syncedCameraPosition;
         }
     }
 }

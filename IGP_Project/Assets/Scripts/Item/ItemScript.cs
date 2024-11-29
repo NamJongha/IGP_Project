@@ -146,7 +146,7 @@ public class ItemScript : NetworkBehaviour
     {
         itemSprite.enabled = newVal;
     }
-    
+
     private void OnOffsetColliderChagned(NetworkBool oldVal, NetworkBool newVal)
     {
         itemGroundOffset.enabled = newVal;

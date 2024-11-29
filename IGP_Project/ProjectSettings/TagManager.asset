@@ -15,6 +15,9 @@ TagManager:
   - Pink
   - Green
   - GameManager
+  - CamBoundary
+  - MoveBoundary
+  - ViewPosition
   layers:
   - Default
   - TransparentFX
