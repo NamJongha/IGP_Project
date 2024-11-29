@@ -72,8 +72,7 @@ public class NetworkRunnerHandler : MonoBehaviour
 
     private void OnGameStarted(NetworkRunnerHandler runner)
     {
-        //Debug.Log("GameStart");
-        //SceneManager.LoadScene("Monster_1");
+
     }
 }
 

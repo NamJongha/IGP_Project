@@ -27,32 +27,6 @@ public class ShowEmotion : NetworkBehaviour
 
     }
 
-    private void Update()
-    {
-        //if (!HasStateAuthority)
-        //    return;
-        //
-        //if (!isEmotionActive)
-        //{
-        //    if (Input.GetKeyDown(KeyCode.Alpha1))
-        //    {
-        //        ChangeSprite(0); // Good
-        //    }
-        //
-        //    if (Input.GetKeyDown(KeyCode.Alpha2))
-        //    {
-        //        ChangeSprite(1); // Angry
-        //    }
-        //
-        //    if (Input.GetKeyDown(KeyCode.Alpha3))
-        //    {
-        //        ChangeSprite(2); // Sorry
-        //    }
-        //}
-        //
-        //UpdateSprite();
-    }
-
     public override void FixedUpdateNetwork()
     {
         base.FixedUpdateNetwork();

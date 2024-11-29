@@ -36,21 +36,14 @@ public class NetworkPlayerSpawner : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnConnectedToServer(NetworkRunner runner)
     {
-        //if (runner.Topology == Topologies.Shared)
-        //{
-        //    Debug.Log("connected and start prefab as local");
 
-        //    runner.Spawn(playerPrefab, GetRandomSpawnPoint(), Quaternion.identity, runner.LocalPlayer);
-        //}
-        //else Debug.Log("connected to server"); // not running in the shared mode
     }
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
         if (runner.IsServer)
         {
-            Debug.Log(player.PlayerId + "Player Joined");
-            //runner.Spawn(playerPrefab, GetRandomSpawnPoint(), Quaternion.identity, player);
+           
         }
         else return;
     }

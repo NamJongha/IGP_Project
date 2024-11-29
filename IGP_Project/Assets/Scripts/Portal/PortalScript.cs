@@ -22,14 +22,7 @@ public class PortalScript : NetworkBehaviour
 
     private void Awake()
     {
-        //if (GameObject.FindWithTag("Key"))
-        //{
-        //    isPortalLocked = true;
-        //}
-        //else
-        //{
-        //    isPortalLocked = false;
-        //}
+
     }
 
     public override void FixedUpdateNetwork()
@@ -81,11 +74,6 @@ public class PortalScript : NetworkBehaviour
             midSprite.sprite = openedSprite_mid;
             topSprite.sprite = openedSprite_top;
         }
-    }
-
-    public void MoveToNextStage()
-    {
-        
     }
 
     public void SetLocked()

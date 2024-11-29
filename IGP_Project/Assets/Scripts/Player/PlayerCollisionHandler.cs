@@ -32,8 +32,7 @@ public class PlayerCollisionHandler : MonoBehaviour
         {
             StartCoroutine(NetworkPortalHandler.Instance.SelectSound(3));
             this.gameObject.GetComponentInParent<PlayerController>().isPlayerDead = true;
-            string currentSceneName = SceneManager.GetActiveScene().name;
-            //runner.LoadScene(currentSceneName);
+            StartCoroutine("RestartStage");
         }
     }
 
@@ -120,5 +119,12 @@ public class PlayerCollisionHandler : MonoBehaviour
         {
             OnBoundary = false;
         }
+    }
+
+    private IEnumerator RestartStage()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        runner.LoadScene(currentSceneName);
     }
 }

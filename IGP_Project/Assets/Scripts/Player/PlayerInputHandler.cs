@@ -6,16 +6,18 @@ using UnityEngine.UIElements;
 public class PlayerInputHandler : MonoBehaviour
 {
     PlayerController playerController;
+    ShowEmotion playerEmotion;
 
     Vector2 inputVector = Vector2.zero;
     float portalInput = 0;
     float useItemInput = 0;
-    int emotionInput = 0;
+    float emotionInput = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         playerController = GetComponent<PlayerController>();
+        playerEmotion = GetComponent<ShowEmotion>();
     }
 
     //Recognition of player's input
@@ -29,7 +31,7 @@ public class PlayerInputHandler : MonoBehaviour
         //inputVector.x = Input.GetAxisRaw("Horizontal");
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            //Debug.Log("PressedLeft");
+            Debug.Log("PressedLeft");
             inputVector.x = -1;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
@@ -64,7 +66,6 @@ public class PlayerInputHandler : MonoBehaviour
             useItemInput = 2;
         }
 
-        //show emotion
         if (Input.GetKey(KeyCode.Alpha1))
         {
             emotionInput = 1;
@@ -83,7 +84,7 @@ public class PlayerInputHandler : MonoBehaviour
         playerController.SetInputVector(inputVector);
         playerController.SetEnterPortal(portalInput);
         playerController.SetUseItem(useItemInput);
-        playerController.SetEmotion(emotionInput);
+        playerEmotion.SetEmotion(emotionInput);
     }
 
     //send player's input data to host

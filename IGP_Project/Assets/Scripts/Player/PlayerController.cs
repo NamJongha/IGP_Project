@@ -149,8 +149,6 @@ public class PlayerController : NetworkBehaviour
                 UsingItem();
 
                 HandlingKey();
-                
-                representEmotion();
 
                 if (isPlayerDead)
                 {

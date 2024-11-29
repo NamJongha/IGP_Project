@@ -163,8 +163,6 @@ public class NetworkGameManager : MonoBehaviour
                 player.GetComponent<PlayerController>().isPlayerDead = true;
                 player.GetComponent<PlayerController>().SetNotMovable();
             }
-            //string currentSceneName = SceneManager.GetActiveScene().name;
-            //runner.LoadScene(currentSceneName);
         }
     }
 
