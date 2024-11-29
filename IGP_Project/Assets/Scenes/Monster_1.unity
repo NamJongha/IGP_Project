@@ -205,7 +205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 511380962813688409, guid: 131006aae3b91394bae305598882c859, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 511380962813688409, guid: 131006aae3b91394bae305598882c859, type: 3}
       propertyPath: m_LocalRotation.w
@@ -506,6 +506,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ad9c5ee3ce1a14fbd7a61323252460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioSource: {fileID: 0}
+  audioClips: []
 --- !u!114 &557572649 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6856926251186975016, guid: 9f7167d42018db248ad7497cd81c6e33, type: 3}

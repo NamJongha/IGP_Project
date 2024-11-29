@@ -28,7 +28,9 @@ public class PlayerCollisionHandler : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         //if collided object's tag is enemy
-        if (collision.gameObject.CompareTag("Enemy")) {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            StartCoroutine(NetworkPortalHandler.Instance.SelectSound(3));
             this.gameObject.GetComponentInParent<PlayerController>().isPlayerDead = true;
             string currentSceneName = SceneManager.GetActiveScene().name;
             //runner.LoadScene(currentSceneName);
@@ -70,6 +72,7 @@ public class PlayerCollisionHandler : MonoBehaviour
             Debug.Log("Collided");
             if (this.gameObject.GetComponent<PlayerController>().GetItemCode() == -1)
             {
+                StartCoroutine(NetworkPortalHandler.Instance.SelectSound(1));
                 //make item invisible and not collidable
                 collision.gameObject.GetComponentInParent<ItemScript>().SetSprite();//if want to debug that if acquired item is following the player, make this line annotation
                 collision.gameObject.GetComponentInParent<ItemScript>().SetCollider();
@@ -94,6 +97,7 @@ public class PlayerCollisionHandler : MonoBehaviour
         //if player collided with key, and the key is not following player
         if(collision.gameObject.tag == "Key" && collision.gameObject.GetComponentInParent<KeyScript>().GetFollowState() == false)
         {
+            StartCoroutine(NetworkPortalHandler.Instance.SelectSound(2));
             //make key follows the player
             this.gameObject.GetComponent<PlayerController>().SetKey(collision.gameObject);
             collision.gameObject.GetComponentInParent<KeyScript>().SetFollow();

@@ -10,6 +10,8 @@ public class NetworkPortalHandler : MonoBehaviour
     public static NetworkPortalHandler Instance;
 
     private NetworkRunner runner;
+    [SerializeField] AudioSource AudioSource;
+    [SerializeField] AudioClip[] audioClips;            // 0:jump, 1:getItem, 2:getKey, 3:dead, 4:clear, 5:dash
 
     private string nextScene;
 
@@ -22,6 +24,7 @@ public class NetworkPortalHandler : MonoBehaviour
 
     private void Awake()
     {
+        AudioSource = GetComponent<AudioSource>();
         if(Instance == null) {
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -137,8 +140,22 @@ public class NetworkPortalHandler : MonoBehaviour
         {
             Debug.Log("load new Scene");
             allInPortal = false;
-            runner.LoadScene(nextScene);
-            
+            StartCoroutine(ClearStage());
         }
+    }
+    IEnumerator PlaySound()
+    {
+        AudioSource.Play();
+        yield return new WaitForSeconds(1f);
+    }
+    IEnumerator ClearStage()
+    {
+        yield return StartCoroutine(SelectSound(4));
+        runner.LoadScene(nextScene);
+    }
+    public IEnumerator SelectSound(int soundIndex)
+    {
+        AudioSource.clip = audioClips[soundIndex];
+        yield return StartCoroutine(PlaySound());
     }
 }
