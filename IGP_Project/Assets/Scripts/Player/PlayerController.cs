@@ -223,6 +223,7 @@ public class PlayerController : NetworkBehaviour
     {
         if (jumpInput == 1 && IsGrounded())
         {
+            StartCoroutine(NetworkPortalHandler.Instance.SelectSound(0));
             playerRB2D.velocity = new Vector2(playerRB2D.velocity.x, 0);
             playerRB2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
@@ -270,6 +271,7 @@ public class PlayerController : NetworkBehaviour
                     {
                         if (!usedJump)
                         {
+                            StartCoroutine(NetworkPortalHandler.Instance.SelectSound(0));
                             Debug.Log("double jump");
                             usedJump = true;
                             playerRB2D.velocity = new Vector2(playerRB2D.velocity.x, 0);
@@ -280,6 +282,7 @@ public class PlayerController : NetworkBehaviour
                     //dash item
                     if (itemCode == 1 && !usedDash)
                     {
+                        StartCoroutine(NetworkPortalHandler.Instance.SelectSound(5));
                         Debug.Log("Use Dash");
                         usedDash = true;
                         gravityScale = 0;//set player gravity scale to  so that it looks like dash on air(no falling while dash)
