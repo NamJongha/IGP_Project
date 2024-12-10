@@ -44,7 +44,7 @@ public class EnemyController : NetworkBehaviour
     public override void FixedUpdateNetwork()
     {
 
-        Debug.Log(gameManager.GetPlayerDead());
+        //Debug.Log(gameManager.GetPlayerDead());
         if (HasStateAuthority)
         {
             enemyAnimator.SetBool("isPlayerDead", false);
@@ -74,6 +74,7 @@ public class EnemyController : NetworkBehaviour
                     var (prevMoving, curMoving) = isMovingRightReader.Read(previousBuffer, currentBuffer);
                     OnIsMovingRightChagned(prevMoving, curMoving);
                     break;
+
             }
         }
     }

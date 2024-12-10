@@ -145,6 +145,7 @@ MonoBehaviour:
     m_Bits: 1088
   _isInPortal: 0
   _isPlayerDead: 0
+  lastDirection: 0
 --- !u!114 &5487040375170349593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,7 +308,7 @@ GameObject:
   - component: {fileID: 1243116432464021309}
   m_Layer: 7
   m_Name: Collider
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -383,7 +384,7 @@ GameObject:
   - component: {fileID: 1628152019637297005}
   m_Layer: 0
   m_Name: GroundCheck
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -415,7 +416,7 @@ GameObject:
   - component: {fileID: 8242194891695966219}
   m_Layer: 0
   m_Name: BodySprite
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -501,7 +502,7 @@ GameObject:
   - component: {fileID: 6963801553721943444}
   m_Layer: 7
   m_Name: FaceSprite
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -615,7 +616,7 @@ GameObject:
   - component: {fileID: 6280386520396458277}
   m_Layer: 10
   m_Name: GroundCollider
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

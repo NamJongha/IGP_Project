@@ -28,8 +28,8 @@ public class PlayerController : NetworkBehaviour
     [SerializeField] private LayerMask groundLayer;
 
     //player input value
+    public float jumpInput = 0;
     float moveInput = 0;
-    float jumpInput = 0;
     float portalInput = 0;
     float useItemInput = 0;
     float emotionInput = 0;
@@ -41,7 +41,7 @@ public class PlayerController : NetworkBehaviour
     private int itemCode = -1; //None: -1, double jump: 0, dash: 1, weapon: 2
     private GameObject curItem; //save acquired item's information
     private bool isMovable = true;//for dash, if it is false, player can't controll character
-    private float lastDirection = 0;//for dash, save the last direction that player looked(moved)
+    public float lastDirection = 0;//for dash, save the last direction that player looked(moved)
 
     private GameObject curKey;
 
@@ -147,6 +147,8 @@ public class PlayerController : NetworkBehaviour
                     SetFaceSprite();
                 }
                 UsingItem();
+                
+                MoveRestriction();
 
                 HandlingKey();
 
@@ -212,8 +214,8 @@ public class PlayerController : NetworkBehaviour
         }
         else
         {
-            playerRB2D.velocity = Vector2.zero;
             MoveRestriction();
+            playerRB2D.velocity = Vector2.zero;
         }
     }
 
@@ -336,8 +338,12 @@ public class PlayerController : NetworkBehaviour
     private void MoveRestriction()
     {
         camwidthPosition = cameraSize.GetCameraWidthPosition();
-        this.transform.position = new Vector3(Mathf.Clamp(transform.position.x, playerBodySprite.bounds.size.x * 0.4f - camwidthPosition, camwidthPosition - playerBodySprite.bounds.size.x * 0.6f),
-                                                              transform.position.y);
+        if (collisionHandler.getOnBoundray())
+        {
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, playerBodySprite.bounds.size.x * 0.6f - camwidthPosition, camwidthPosition - playerBodySprite.bounds.size.x * 0.6f),
+                                             transform.position.y);
+        }
+        Debug.Log("Player Color: " + bodyColor + ",  is trigger: " + collisionHandler.getOnBoundray());
     }
     private void representEmotion()
     {

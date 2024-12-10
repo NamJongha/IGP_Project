@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Board_1.unity
     guid: b5b61138ae6b5cd48ab27ee6ca81874b
+  - enabled: 1
+    path: Assets/Scenes/Board_2.unity
+    guid: 306a6c8fab27b05499205e751f5356d8
+  - enabled: 1
+    path: Assets/Scenes/Monster_2.unity
+    guid: acce9138c6e9b1b4a805e05d8688769d
   m_configObjects: {}
