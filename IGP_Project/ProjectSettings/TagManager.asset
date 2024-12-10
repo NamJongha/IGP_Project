@@ -18,6 +18,9 @@ TagManager:
   - CamBoundary
   - MoveBoundary
   - ViewPosition
+  - Wall
+  - Coin
+  - Button
   layers:
   - Default
   - TransparentFX
@@ -39,10 +42,10 @@ TagManager:
   - 
   - 
   - 
-  - blue
-  - pink
-  - yellow
-  - green
+  - Trap
+  - 
+  - 
+  - 
   - 
   - 
   - 

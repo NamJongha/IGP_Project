@@ -3,20 +3,17 @@ using Fusion;
 
 public class SlidingBoard : NetworkBehaviour
 {
-    public float slideForce = 7f;
+    private float slideForce = 50f;
 
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            NetworkObject playerNetworkObject = collision.gameObject.GetComponent<NetworkObject>();
-            if (playerNetworkObject != null && playerNetworkObject.HasStateAuthority)
+            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+            Rigidbody2D playerRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (playerRigidbody != null)
             {
-                Rigidbody2D playerRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
-                if (playerRigidbody != null)
-                {
-                    playerRigidbody.AddForce(transform.right * slideForce, ForceMode2D.Force);
-                }
+                playerRigidbody.AddForce(new Vector2(player.lastDirection * slideForce, player.transform.position.y), ForceMode2D.Force);
             }
         }
     }

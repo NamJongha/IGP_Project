@@ -45,14 +45,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4306406262162620073}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33b06059f0684ca47bfcb94bdb5724d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.5
-  raycastDistance: 0.2
-  traceDistance: 20
+  _isMovingRight: 1
+  players: []
+  targetPlayer: {fileID: 0}
+  moveSpeed: 2
+  chaseRange: 4
+  isChasing: 0
 --- !u!114 &8205945474563423034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,7 +63,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4306406262162620073}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44fc937e068118b418deac70532ee14d, type: 3}
   m_Name: 
@@ -84,6 +87,7 @@ MonoBehaviour:
   Flags: 1
   NestedObjects: []
   NetworkedBehaviours:
+  - {fileID: 1862410515381115512}
   - {fileID: 8205945474563423034}
   - {fileID: 6179157583559718157}
   - {fileID: 4613969006656958283}

@@ -14,42 +14,45 @@ public class PlayerBoard : NetworkBehaviour
     // 충돌 인식
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (!collision.gameObject.CompareTag("Untagged") && !collision.gameObject.CompareTag("Player"))
+        if (!collision.gameObject.CompareTag("Wall") && !collision.gameObject.CompareTag("Button"))
         {
-            switch (PlayerColor)
+            if (!collision.gameObject.CompareTag("Untagged") && !collision.gameObject.CompareTag("Player"))
             {
-                case "Blue":
-                    if (!collision.gameObject.CompareTag(PlayerColor))
-                    {
-                        Debug.Log(PlayerColor);
-                        Physics2D.IgnoreCollision(collision.collider, GetComponentInChildren<Collider2D>());
-                        Debug.Log(PlayerColor + " is not same");
-                    }
-                    break;
-                case "Green":
-                    if (!collision.gameObject.CompareTag(PlayerColor))
-                    {
-                        Debug.Log(PlayerColor);
-                        Physics2D.IgnoreCollision(collision.collider, GetComponentInChildren<Collider2D>());
-                        Debug.Log(PlayerColor + " is not same");
-                    }
-                    break;
-                case "Pink":
-                    if (!collision.gameObject.CompareTag(PlayerColor))
-                    {
-                        Debug.Log(PlayerColor);
-                        Physics2D.IgnoreCollision(collision.collider, GetComponentInChildren<Collider2D>());
-                        Debug.Log(PlayerColor + " is not same");
-                    }
-                    break;
-                case "Yellow":
-                    if (!collision.gameObject.CompareTag(PlayerColor))
-                    {
-                        Debug.Log(PlayerColor);
-                        Physics2D.IgnoreCollision(collision.collider, GetComponentInChildren<Collider2D>());
-                        Debug.Log(PlayerColor + " is not same");
-                    }
-                    break;
+                switch (PlayerColor)
+                {
+                    case "Blue":
+                        if (!collision.gameObject.CompareTag(PlayerColor))
+                        {
+                            Debug.Log(PlayerColor);
+                            Physics2D.IgnoreCollision(collision.collider, GetComponentInChildren<Collider2D>());
+                            Debug.Log(PlayerColor + " is not same");
+                        }
+                        break;
+                    case "Green":
+                        if (!collision.gameObject.CompareTag(PlayerColor))
+                        {
+                            Debug.Log(PlayerColor);
+                            Physics2D.IgnoreCollision(collision.collider, GetComponentInChildren<Collider2D>());
+                            Debug.Log(PlayerColor + " is not same");
+                        }
+                        break;
+                    case "Pink":
+                        if (!collision.gameObject.CompareTag(PlayerColor))
+                        {
+                            Debug.Log(PlayerColor);
+                            Physics2D.IgnoreCollision(collision.collider, GetComponentInChildren<Collider2D>());
+                            Debug.Log(PlayerColor + " is not same");
+                        }
+                        break;
+                    case "Yellow":
+                        if (!collision.gameObject.CompareTag(PlayerColor))
+                        {
+                            Debug.Log(PlayerColor);
+                            Physics2D.IgnoreCollision(collision.collider, GetComponentInChildren<Collider2D>());
+                            Debug.Log(PlayerColor + " is not same");
+                        }
+                        break;
+                }
             }
         }
     }

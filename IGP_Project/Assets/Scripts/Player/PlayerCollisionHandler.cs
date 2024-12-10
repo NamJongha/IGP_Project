@@ -10,8 +10,14 @@ public class PlayerCollisionHandler : MonoBehaviour
     private float onPortal = 0;
     private NetworkRunner runner;
     private bool OnBoundary = false;
+
+    /// <summary>
+    // private PanelFader panelFader;
+    /// </summary>
+    /// <returns></returns>
     //if player is on the portal, return 1
     //if not, return 0
+
     public float getPortalValue()
     {
         return onPortal;
@@ -23,6 +29,7 @@ public class PlayerCollisionHandler : MonoBehaviour
     private void Start()
     {
         runner = FindObjectOfType<NetworkRunner>();
+        //panelFader = FindObjectOfType<PanelFader>();
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -55,7 +62,7 @@ public class PlayerCollisionHandler : MonoBehaviour
                 {
                     //unlock the portal with key. Key will be disappeared after using it.
                     collision.gameObject.GetComponentInParent<PortalScript>().SetLocked();
-                    this.gameObject.GetComponent<PlayerController>().GetKey().transform.parent.gameObject.GetComponent<KeyScript>().SetActiveState();
+                    this.gameObject.GetComponent<PlayerController>().GetKey().transform.parent.gameObject.GetComponent<KeyScript>().isActivate = false;
                     this.gameObject.GetComponent<PlayerController>().SetKey(null);
                 }
 
@@ -105,6 +112,16 @@ public class PlayerCollisionHandler : MonoBehaviour
         if(collision.gameObject.tag == "MoveBoundary")
         {
             OnBoundary = true;
+        }
+
+        if( collision.gameObject.tag == "Coin")
+        {
+            collision.gameObject.GetComponentInParent<CoinScript>().isAcquired = true;
+        }
+
+        if(collision.gameObject.tag == "Button")
+        {
+            collision.gameObject.GetComponentInParent<ButtonScript>().SetIsPressed();
         }
     }
 

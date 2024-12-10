@@ -15,7 +15,7 @@ public class NetworkPortalHandler : MonoBehaviour
 
     private string nextScene;
 
-    private GameObject[] playerList;
+    public GameObject[] playerList;
 
     private bool curInPortal = false;
     private bool allInPortal = false;
