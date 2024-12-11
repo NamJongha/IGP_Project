@@ -54,7 +54,7 @@ MonoBehaviour:
   players: []
   targetPlayer: {fileID: 0}
   moveSpeed: 2
-  chaseRange: 4
+  chaseRange: 2
   isChasing: 0
 --- !u!114 &8205945474563423034
 MonoBehaviour:

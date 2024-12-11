@@ -5,7 +5,7 @@ using Fusion;
 
 public class ButtonScript : NetworkBehaviour
 {
-    [Networked] private bool isPressed { get; set; }
+    [Networked] public bool isPressed { get; set; } = false;
 
     private Animator buttonAnimator;
 
@@ -29,6 +29,10 @@ public class ButtonScript : NetworkBehaviour
         if (isPressed)
         {
             buttonAnimator.SetBool("IsPressed", true);
+        }
+        else if (!isPressed)
+        {
+            buttonAnimator.SetBool("IsPressed", false);
         }
     }
 
