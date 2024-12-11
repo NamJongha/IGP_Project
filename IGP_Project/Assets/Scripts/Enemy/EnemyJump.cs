@@ -100,6 +100,8 @@ public class EnemyJump : NetworkBehaviour
 
                 Jumping();
             }
+            else if(targetPlayer == null)
+                return;
             if (gameManager.GetPlayerDead())
             {
                 enemyRG2D.velocity = Vector2.zero;
@@ -150,7 +152,10 @@ public class EnemyJump : NetworkBehaviour
         else
         {
             Debug.LogWarning("No player found at index " + targetIndex + ". Current player count: " + numberOfPlayers);
-            targetPlayer = players[0];
+            if (players[0] == null)
+                return;
+            else
+                targetPlayer = players[0];
         }
     }
     private void Jumping()

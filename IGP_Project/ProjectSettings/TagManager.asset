@@ -34,7 +34,7 @@ TagManager:
   - CollideOnlyFloor
   - PlayerTop
   - Boundary
-  - 
+  - MoveBoundary
   - 
   - 
   - 
