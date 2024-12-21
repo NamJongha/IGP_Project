@@ -148,7 +148,7 @@ public class PlayerController : NetworkBehaviour
                 }
                 UsingItem();
                 
-                MoveRestriction();
+                //MoveRestriction();
 
                 HandlingKey();
 
@@ -214,7 +214,7 @@ public class PlayerController : NetworkBehaviour
         }
         else
         {
-            MoveRestriction();
+            //MoveRestriction();
             playerRB2D.velocity = Vector2.zero;
         }
     }
@@ -334,7 +334,7 @@ public class PlayerController : NetworkBehaviour
         yield return new WaitForSeconds(0.5f);
         usedDash = false;
     }
-
+    /*
     private void MoveRestriction()
     {
         camwidthPosition = cameraSize.GetCameraWidthPosition();
@@ -345,6 +345,7 @@ public class PlayerController : NetworkBehaviour
         }
         Debug.Log("Player Color: " + bodyColor + ",  is trigger: " + collisionHandler.getOnBoundray());
     }
+    */
     private void representEmotion()
     {
         //show different emotion according to emotionInput value
