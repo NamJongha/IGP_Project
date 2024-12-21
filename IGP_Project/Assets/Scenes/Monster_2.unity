@@ -132,11 +132,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2008218451861417573, guid: fa9bd7aa9d33bba45a9c9a55e2e7416c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.4954376
+      value: -0.46
       objectReference: {fileID: 0}
     - target: {fileID: 2008218451861417573, guid: fa9bd7aa9d33bba45a9c9a55e2e7416c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.20794648
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 2008218451861417573, guid: fa9bd7aa9d33bba45a9c9a55e2e7416c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1422,7 +1422,7 @@ GameObject:
   - component: {fileID: 808160725}
   - component: {fileID: 808160724}
   - component: {fileID: 808160723}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
